@@ -1,4 +1,3 @@
-# Automated-7-0-Inspection-System
 # Automated 7/0 Quality Inspection System
 
 ![License](https://img.shields.io/badge/license-MIT-blue) ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Contributors](https://img.shields.io/badge/contributors-6-orange) ![Platform](https://img.shields.io/badge/platform-cross--platform-lightgrey) ![Tech Stack](https://img.shields.io/badge/tech-stack%20modern-blueviolet) ![Profile Views](https://komarev.com/ghpvc/?username=your-repo&color=blue)

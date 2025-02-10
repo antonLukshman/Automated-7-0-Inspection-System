@@ -105,19 +105,6 @@ The garment manufacturing industry faces challenges like inefficiencies, human e
 
 ---
 
-## Contributors
-
-![Contributors Table](https://contrib.rocks/image?repo=antonLukshman/Automated-7-0-Inspection-System)
-
-1. Luckmali Fernando
-2. Kesara Jayaweera
-3. Hassan Shamil
-4. Anton Luckshman
-5. Judith Nihara
-6. Vanuja Nanayakkara
-
----
-
 ## Acknowledgements
 
 We extend our gratitude to:

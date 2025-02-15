@@ -44,7 +44,7 @@ export const ContactForm = () => {
               <div className="flex items-center">
                 <Mail className="h-6 w-6 text-blue-600" />
                 <span className="ml-4 text-gray-500">
-                  contact@7-0inspector.com
+                  contact@qualitrack.com
                 </span>
               </div>
               <div className="flex items-center">

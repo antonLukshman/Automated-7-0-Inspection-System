@@ -12,7 +12,7 @@ export const Footer = () => {
             <div className="flex items-center">
               <Eye className="h-8 w-8 text-blue-500" />
               <span className="ml-2 text-xl font-bold text-white">
-                7/0 Quality Inspector
+                QualiTrack
               </span>
             </div>
             <p className="mt-4 text-gray-400 max-w-md">
@@ -52,8 +52,7 @@ export const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-gray-800">
           <p className="text-gray-400 text-center">
-            © {new Date().getFullYear()} 7/0 Quality Inspector. All rights
-            reserved.
+            © {new Date().getFullYear()} QualiTrack. All rights reserved.
           </p>
         </div>
       </div>

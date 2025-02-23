@@ -4,13 +4,6 @@
 
 ![Header Image](assets/Logo.png)
 
-
-## Project Title
-
-Automated 7/0 Quality Inspection System
-
-## Overview
-
 The garment manufacturing industry faces challenges like inefficiencies, human errors, and delays in manual quality inspections. To address these, our project introduces an **Automated 7/0 Quality Inspection System** that leverages modern technologies such as **Machine Learning (ML)** and **Super-Resolution (SR)** to enhance accuracy, speed, and efficiency. The system aims to reduce defects, optimize workflows, and improve overall productivity for garment manufacturers.
 
 ---

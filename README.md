@@ -2,13 +2,7 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue) ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Contributors](https://img.shields.io/badge/contributors-6-orange) ![Platform](https://img.shields.io/badge/platform-cross--platform-lightgrey) ![Tech Stack](https://img.shields.io/badge/tech-stack%20modern-blueviolet) ![Profile Views](https://komarev.com/ghpvc/?username=your-repo&color=blue)
 
-![Header Image](https://via.placeholder.com/1200x300.png?text=Automated+7%2F0+Quality+Inspection+System)
-
-## Project Title
-
-Automated 7/0 Quality Inspection System
-
-## Overview
+![Header Image](assets/Logo.png)
 
 The garment manufacturing industry faces challenges like inefficiencies, human errors, and delays in manual quality inspections. To address these, our project introduces an **Automated 7/0 Quality Inspection System** that leverages modern technologies such as **Machine Learning (ML)** and **Super-Resolution (SR)** to enhance accuracy, speed, and efficiency. The system aims to reduce defects, optimize workflows, and improve overall productivity for garment manufacturers.
 

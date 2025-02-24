@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Eye } from "lucide-react";
 import { NavLink } from "./NavLink";
 
 export const Navbar = () => {
@@ -23,7 +22,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0 flex items-center">
-            <Eye className="h-8 w-8 text-blue-600" />
+            <img src="/Logo.png" alt="Logo" className="h-8 w-8" />
             <span className="ml-2 text-xl font-bold text-gray-900">
               QualiTrack
             </span>

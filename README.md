@@ -127,4 +127,4 @@ We extend our gratitude to:
 - "Improved YOLOv8 garment sewing defect detection" (Journal of Measurements in Engineering, 2024)
 - "Deep-GD: Deep Learning based Automatic Garment Defect Detection" (International Journal of Electrical and Electronics Research, 2024)
 =======
->>>>>>> bf3c46b (added: operstor id and inspection screen)
+>>>>>>> e8c923a (Update README.md)

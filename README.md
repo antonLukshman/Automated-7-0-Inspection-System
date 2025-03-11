@@ -1,3 +1,9 @@
+# flutter_application_1
+
+A new Flutter project.
+
+## Getting Started
+
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
@@ -8,7 +14,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-=======
 # Automated 7/0 Quality Inspection System
 
 ![License](https://img.shields.io/badge/license-MIT-blue) ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Contributors](https://img.shields.io/badge/contributors-6-orange) ![Platform](https://img.shields.io/badge/platform-cross--platform-lightgrey) ![Tech Stack](https://img.shields.io/badge/tech-stack%20modern-blueviolet) ![Profile Views](https://komarev.com/ghpvc/?username=your-repo&color=blue)
@@ -121,4 +126,5 @@ We extend our gratitude to:
 - "What is 7/0 System in Garment Inspection?" (Fantasygameday, 2024)
 - "Improved YOLOv8 garment sewing defect detection" (Journal of Measurements in Engineering, 2024)
 - "Deep-GD: Deep Learning based Automatic Garment Defect Detection" (International Journal of Electrical and Electronics Research, 2024)
->>>>>>> 8ebf57b023977e32beaacae509e17c2a2ff21300
+=======
+>>>>>>> bf3c46b (added: operstor id and inspection screen)

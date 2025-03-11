@@ -13,7 +13,7 @@ class SelectUser extends   StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
 // Logo Icon
-              Container(
+              /*Container(
                 width: 80,
                 height: 80,
                 decoration: BoxDecoration(
@@ -25,7 +25,7 @@ class SelectUser extends   StatelessWidget{
                   color: Colors.white,
                   size: 40,
                 ),
-              ),
+              ),*/
 
               const SizedBox(height: 16),
 

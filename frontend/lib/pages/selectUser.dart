@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_qualitrack/pages/login.dart';
-import 'package:flutter_application_qualitrack/styles/app_styles.dart';
+import '/pages/login.dart';
+import '../styles/app_styles.dart';
 
 class SelectUserPage extends StatefulWidget {
   const SelectUserPage({super.key});

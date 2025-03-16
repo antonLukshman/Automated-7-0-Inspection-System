@@ -119,3 +119,30 @@ class AppStyles {
     );
   }
 }
+
+class ContainerStyle {
+  // Define some styles for containers
+  static BoxDecoration primaryContainerStyle = BoxDecoration(
+    color: Colors.blueAccent, // Background color of the container
+    borderRadius: BorderRadius.circular(12), // Rounded corners
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black26,
+        blurRadius: 5,
+        offset: Offset(0, 4),
+      ),
+    ],
+  );
+
+  static BoxDecoration secondaryContainerStyle = BoxDecoration(
+    color: Colors.greenAccent,
+    borderRadius: BorderRadius.circular(8),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black12,
+        blurRadius: 4,
+        offset: Offset(0, 2),
+      ),
+    ],
+  );
+}

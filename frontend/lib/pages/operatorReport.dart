@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_qualitrack/styles/app_styles.dart';
+import '../styles/app_styles.dart';
+
 
 class OperatorReportPage extends StatelessWidget {
   const OperatorReportPage({super.key});

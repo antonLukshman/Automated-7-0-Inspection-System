@@ -1,8 +1,17 @@
+// import 'package:flutter/material.dart';
+// import 'package:flutter_application_qualitrack/pages/forgotPassword.dart';
+// import 'package:flutter_application_qualitrack/pages/home.dart';
+// import 'package:flutter_application_qualitrack/pages/signup.dart';
+// import 'package:flutter_application_qualitrack/styles/app_styles.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_application_qualitrack/pages/forgotPassword.dart';
-import 'package:flutter_application_qualitrack/pages/home.dart';
-import 'package:flutter_application_qualitrack/pages/signup.dart';
-import 'package:flutter_application_qualitrack/styles/app_styles.dart';
+import '../pages/forgotPassword.dart';
+import '../pages/home.dart';
+import '../pages/signup.dart';
+import '../styles/app_styles.dart';
+
+
+
 
 class LoginPage extends StatefulWidget {
   final String? role;

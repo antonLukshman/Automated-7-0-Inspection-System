@@ -115,4 +115,3 @@ We extend our gratitude to:
 - "What is 7/0 System in Garment Inspection?" (Fantasygameday, 2024)
 - "Improved YOLOv8 garment sewing defect detection" (Journal of Measurements in Engineering, 2024)
 - "Deep-GD: Deep Learning based Automatic Garment Defect Detection" (International Journal of Electrical and Electronics Research, 2024)
-

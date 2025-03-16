@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_qualitrack/styles/app_styles.dart';
+import '/styles/app_styles.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});

@@ -145,4 +145,48 @@ class ContainerStyle {
       ),
     ],
   );
+
+
+  static Widget reusableContainer({
+    required Widget child,
+  }) {
+    return Container(
+      width: 210, // Fixed width for the container
+      padding: const EdgeInsets.all(16), // Padding inside the container
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 48, 159, 59), // Background color of the container
+        borderRadius: BorderRadius.circular(12), // Rounded corners
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 5,
+            offset: Offset(0, 4),
+          ),
+        ],
+      ),
+      child: child, // The content of the container
+    );
+  }
+
+  static Widget reusableContainer2({
+    required Widget child,
+  }) {
+    return Container(
+      width: 130, // Fixed width for the container
+      padding: const EdgeInsets.all(16), // Padding inside the container
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(
+            255, 214, 221, 220), // Background color of the container
+        borderRadius: BorderRadius.circular(12), // Rounded corners
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 5,
+            offset: Offset(0, 4),
+          ),
+        ],
+      ),
+      child: child, // The content of the container
+    );
+  }
 }

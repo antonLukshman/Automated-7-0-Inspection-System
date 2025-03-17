@@ -1,13 +1,7 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_application_qualitrack/pages/forgotPassword.dart';
-// import 'package:flutter_application_qualitrack/pages/home.dart';
-// import 'package:flutter_application_qualitrack/pages/signup.dart';
-// import 'package:flutter_application_qualitrack/styles/app_styles.dart';
-
 import 'package:flutter/material.dart';
-import '../pages/forgotPassword.dart';
-import '../pages/home.dart';
-import '../pages/signup.dart';
+//import '../pages/forgotPassword.dart';
+import 'home.dart';
+import 'signup.dart';
 import '../styles/app_styles.dart';
 
 
@@ -56,10 +50,10 @@ class _LoginPageState extends State<LoginPage> {
 
   // navigating to the Forgot Password page
   void _handleForgotPassword() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
-    );
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+    // );
   }
 
   @override

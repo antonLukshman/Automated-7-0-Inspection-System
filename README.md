@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-# flutter_application_1
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
 # Automated 7/0 Quality Inspection System
 
 ![License](https://img.shields.io/badge/license-MIT-blue) ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Contributors](https://img.shields.io/badge/contributors-6-orange) ![Platform](https://img.shields.io/badge/platform-cross--platform-lightgrey) ![Tech Stack](https://img.shields.io/badge/tech-stack%20modern-blueviolet) ![Profile Views](https://komarev.com/ghpvc/?username=your-repo&color=blue)
@@ -30,7 +12,7 @@ The garment manufacturing industry faces challenges like inefficiencies, human e
 
 ### Key Features
 
-- 🧠 **Automated Defect Detection**: Utilizes a machine learning model trained using **Azure Custom Vision** to detect defects such as stitching errors, fabric tears, and stains.
+- 🧠 **Automated Defect Detection**: Utilizes pre-trained YOLO (You Only Look Once) models to detect defects such as stitching errors, fabric tears, and stains.
 - 🎨 **Image Enhancement**: Employs ESRGAN (Enhanced Super-Resolution Generative Adversarial Networks) to enhance low-quality images for more precise defect identification.
 - ⏱️ **Real-Time Updates**: Provides instant notifications and updates through a supervisor dashboard for timely corrective actions.
 - 📱 **Mobile Application**: A user-friendly app for garment inspectors to capture and process images directly on the production floor.
@@ -42,9 +24,10 @@ The garment manufacturing industry faces challenges like inefficiencies, human e
 
 - **Frontend**: Flutter (Cross-platform mobile app development)
 - **Backend**: Django (Data management and API integration)
-- **Machine Learning Models**: Trained using **Azure Custom Vision** for object detection and ESRGAN for image enhancement
+- **Machine Learning Models**: YOLOv8 for object detection and ESRGAN for image enhancement
 - **Database Management**: Cloud-based database for scalable and centralized storage
 - **Collaboration Tools**: ClickUp, Slack, and Google Meet
+
 
 ---
 
@@ -59,9 +42,10 @@ The garment manufacturing industry faces challenges like inefficiencies, human e
 
 ## Implementation Workflow
 
+
 1. **Capture Image**: Inspectors use the mobile app to take garment images.
 2. **Enhance Image**: The image is processed using ESRGAN for clarity.
-3. **Analyze Defects**: The Azure Custom Vision-trained model detects defects and categorizes them.
+3. **Analyze Defects**: YOLOv8 detects defects and categorizes them.
 4. **Log Details**: The system records defect types, timestamps, and other metadata.
 5. **Notify Supervisor**: Flags are raised and displayed on a real-time dashboard for immediate action.
 6. **Optimize Processes**: Centralized data provides insights to identify trends and improve production quality.
@@ -102,6 +86,8 @@ The garment manufacturing industry faces challenges like inefficiencies, human e
 
 ---
 
+
+
 ## Team Members
 
 - **Luckmali Fernando (Group Leader)**
@@ -123,9 +109,9 @@ We extend our gratitude to:
 
 ---
 
+
 ## References
 
 - "What is 7/0 System in Garment Inspection?" (Fantasygameday, 2024)
 - "Improved YOLOv8 garment sewing defect detection" (Journal of Measurements in Engineering, 2024)
 - "Deep-GD: Deep Learning based Automatic Garment Defect Detection" (International Journal of Electrical and Electronics Research, 2024)
->>>>>>> 8ebf57b023977e32beaacae509e17c2a2ff21300

@@ -221,7 +221,30 @@ class SupervisorProfile extends StatelessWidget {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Handle logout
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: const Text("Sign Out"),
+                          content: const Text("Do you want to sign out?"),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context), // Close dialog
+                              child: const Text("Cancel"),
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                // Handle sign-out logic
+                                Navigator.pop(context); // Close dialog
+                                // Add your sign-out function here
+                                signOut();
+                              },
+                              child: const Text("Sign Out"),
+                            ),
+                          ],
+                        );
+                      },
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
@@ -305,5 +328,8 @@ class SupervisorProfile extends StatelessWidget {
         ],
       ),
     );
+  }void signOut() {
+    // Implement your sign-out logic here
+    print("User signed out"); // Replace with actual sign-out logic
   }
 }

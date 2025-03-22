@@ -10,7 +10,7 @@ import 'styles/app_styles.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget {q
   const MyApp({super.key});
 
   @override

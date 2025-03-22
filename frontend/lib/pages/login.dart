@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-//import '../pages/forgotPassword.dart';
 import 'home.dart';
 import 'signup.dart';
+import 'forgotPassword.dart';
 import '../styles/app_styles.dart';
 
 
@@ -50,10 +50,10 @@ class _LoginPageState extends State<LoginPage> {
 
   // navigating to the Forgot Password page
   void _handleForgotPassword() {
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
-    // );
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+    );
   }
 
   @override

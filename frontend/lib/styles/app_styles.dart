@@ -50,6 +50,7 @@ class AppColors {
   static const Color onPrimary = Colors.white;
   static const Color textPrimary = Color(0xFF212121);
   static const Color textSecondary = Color(0xFF757575);
+  static const Color secondaryBackground = Colors.black38;
 }
 
 // Consistent component styles
@@ -146,7 +147,6 @@ class ContainerStyle {
     ],
   );
 
-
   static Widget reusableContainer({
     required Widget child,
   }) {
@@ -154,7 +154,8 @@ class ContainerStyle {
       width: 210, // Fixed width for the container
       padding: const EdgeInsets.all(16), // Padding inside the container
       decoration: BoxDecoration(
-        color: const Color.fromARGB(255, 48, 159, 59), // Background color of the container
+        color: const Color.fromARGB(
+            255, 48, 159, 59), // Background color of the container
         borderRadius: BorderRadius.circular(12), // Rounded corners
         boxShadow: [
           BoxShadow(

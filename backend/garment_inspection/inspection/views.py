@@ -239,3 +239,6 @@ def analyze_defect_image(request):
             {"error": f"An unexpected error occurred: {str(e)}"}, 
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+    
+def get_total_inspections(date):
+    

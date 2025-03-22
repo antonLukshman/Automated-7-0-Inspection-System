@@ -12,6 +12,7 @@ from rest_framework.parsers import MultiPartParser, FormParser
 from django.http import HttpResponse
 import requests
 from django.conf import settings
+from django.utils import timezone
 
 # User Registration View
 class UserRegistration(APIView):
@@ -241,4 +242,12 @@ def analyze_defect_image(request):
         )
     
 def get_total_inspections(date):
-    
+        # Ensure the date is a datetime.date object
+    if isinstance(date, str):
+        date = timezone.datetime.strptime(date, '%Y-%m-%d').date()
+
+    # Filter inspections by the date part of the inspection_date field
+    total_inspections = Inspection.objects.filter(
+        inspection_date__date=date
+    ).count()
+    return total_inspections

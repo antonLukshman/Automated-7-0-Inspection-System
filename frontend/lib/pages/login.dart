@@ -3,7 +3,8 @@ import 'home.dart';
 import 'signup.dart';
 import 'forgotPassword.dart';
 import '../styles/app_styles.dart';
-
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 
 
@@ -24,21 +25,57 @@ class _LoginPageState extends State<LoginPage> {
   bool _obscurePassword = true;
 
   // Login logic
-  void _handleLogin() {
-    if (_formKey.currentState!.validate()) {
+  // void _handleLogin() {
+  //   if (_formKey.currentState!.validate()) {
       
-      // should validate logic through backend
+  //     // should validate logic through backend
       
-      print('Username: ${_usernameController.text}');
-      print('Password: ${_passwordController.text}');
+  //     print('Username: ${_usernameController.text}');
+  //     print('Password: ${_passwordController.text}');
 
-      // navigating to the HomePage on successful login
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+  //     // navigating to the HomePage on successful login
+  //     Navigator.push(
+  //       context,
+  //       MaterialPageRoute(builder: (context) => HomePage()),
+  //     );
+  //   }
+  // }
+
+Future<void> _handleLogin() async {
+    if (_formKey.currentState!.validate()) {
+      final url = Uri.parse('http:localhost:8000/api/login/'); // Adding the backend URL
+
+      final response = await http.post(
+        url,
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode({
+          "username": _usernameController.text,
+          "password": _passwordController.text,
+        }),
       );
+
+      final responseData = jsonDecode(response.body);
+
+      if (response.statusCode == 200) {
+        // Successful login
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Login successful!')),
+        );
+
+        // Navigate to HomePage
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomePage()),
+        );
+      } else {
+        // Show error message
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(responseData['error'] ?? 'Login failed')),
+        );
+      }
     }
   }
+  
 
   // navigating to the Sign Up page
   void _handleSignUp() {

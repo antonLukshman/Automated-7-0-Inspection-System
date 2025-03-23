@@ -69,6 +69,16 @@ class InspectionDetailView(generics.RetrieveUpdateDestroyAPIView):
     def perform_update(self, serializer):
         serializer.save(user=self.request.user)
 
+# New Inspection Count API View
+class InspectionCountView(APIView):
+    def get(self, request, *args, **kwargs):
+        date_str = request.GET.get('date', str(datetime.date.today()))  # Default to today's date
+        date = timezone.datetime.strptime(date_str, '%Y-%m-%d').date()
+
+        total_inspections = Inspection.objects.filter(inspection_date__date=date).count()
+        
+        return Response({'total_inspections': total_inspections}, status=status.HTTP_200_OK)
+
 # FabricDefect List and Create View
 class FabricDefectListCreateView(generics.ListCreateAPIView):
     queryset = FabricDefect.objects.all()

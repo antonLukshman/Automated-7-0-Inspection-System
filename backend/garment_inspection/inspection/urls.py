@@ -6,6 +6,7 @@ from .views import (
     InspectionDetailView,
     FabricDefectListCreateView,
     FabricDefectDetailView,
+    InspectionCountView,
     review_defect,
     home  # Import the home view
 )
@@ -20,5 +21,6 @@ urlpatterns = [
     path('defects/<int:pk>/', FabricDefectDetailView.as_view(), name='defect-detail'),
     path('defects/review/<int:defect_id>/', review_defect, name='review-defect'),
     path('api/defects/analyze/', views.analyze_defect_image, name='analyze-defect'),
+    path('api/inspection_count/', InspectionCountView.as_view(), name='inspection_count'),
     path('', home, name='home'),  # Add this line
 ]

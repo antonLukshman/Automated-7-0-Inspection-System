@@ -1,0 +1,894 @@
+INFO 2025-03-14 16:36:14,250 autoreload 22056 12720 Watching for file changes with StatReloader
+INFO 2025-03-14 16:37:26,867 autoreload 22144 20788 Watching for file changes with StatReloader
+INFO 2025-03-14 16:37:35,742 basehttp 22144 3120 "GET / HTTP/1.1" 200 40
+WARNING 2025-03-14 16:37:35,816 log 22144 3120 Not Found: /favicon.ico
+WARNING 2025-03-14 16:37:35,817 basehttp 22144 3120 "GET /favicon.ico HTTP/1.1" 404 4513
+INFO 2025-03-14 16:37:55,418 basehttp 22144 3120 "GET / HTTP/1.1" 200 40
+INFO 2025-03-14 16:38:01,374 basehttp 22144 3120 "GET /admin HTTP/1.1" 301 0
+INFO 2025-03-14 16:38:01,397 basehttp 22144 22140 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-14 16:38:01,549 basehttp 22144 22140 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-14 16:38:01,706 basehttp 22144 22140 "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-03-14 16:38:01,718 basehttp 22144 14524 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-03-14 16:38:01,720 basehttp 22144 8328 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-03-14 16:38:01,720 basehttp 22144 18628 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-03-14 16:38:01,721 basehttp 22144 20828 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-03-14 16:38:01,731 basehttp 22144 16844 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-03-14 16:38:01,743 basehttp 22144 20828 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-03-14 16:38:21,793 basehttp 22144 20828 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4321
+INFO 2025-03-14 16:38:28,674 basehttp 22144 20828 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4321
+INFO 2025-03-14 16:38:54,892 basehttp 22144 20828 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4321
+INFO 2025-03-14 16:39:02,664 basehttp 22144 20828 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4321
+INFO 2025-03-14 16:42:20,094 basehttp 22144 20828 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-14 16:42:20,143 basehttp 22144 20828 "GET /admin/ HTTP/1.1" 200 10301
+INFO 2025-03-14 16:42:20,166 basehttp 22144 20828 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-03-14 16:42:20,179 basehttp 22144 16844 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-03-14 16:42:20,180 basehttp 22144 20828 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+ERROR 2025-03-14 16:42:48,734 log 22144 20828 Internal Server Error: /admin/inspection/cliinspector/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: inspection_cliinspector
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 1999, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 866, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 146, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 313, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: inspection_cliinspector
+ERROR 2025-03-14 16:42:48,751 basehttp 22144 20828 "GET /admin/inspection/cliinspector/ HTTP/1.1" 500 203154
+INFO 2025-03-14 16:43:10,667 basehttp 22144 20828 "GET /admin/auth/group/ HTTP/1.1" 200 10761
+INFO 2025-03-14 16:43:10,693 basehttp 22144 20828 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-03-14 16:43:10,704 basehttp 22144 18616 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-03-14 16:43:10,712 basehttp 22144 16484 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-03-14 16:43:10,715 basehttp 22144 19976 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-03-14 16:43:10,715 basehttp 22144 13368 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2025-03-14 16:43:10,723 basehttp 22144 20828 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-14 16:43:10,727 basehttp 22144 18616 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-03-14 16:43:10,734 basehttp 22144 16484 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-03-14 16:43:10,743 basehttp 22144 16484 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-03-14 16:43:10,756 basehttp 22144 16844 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-03-14 16:43:10,777 basehttp 22144 16844 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-03-14 16:43:10,823 basehttp 22144 19976 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-03-14 16:43:10,849 basehttp 22144 19976 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-03-14 16:43:15,649 basehttp 22144 19976 "GET /admin/auth/user/ HTTP/1.1" 200 14368
+INFO 2025-03-14 16:43:15,663 basehttp 22144 16844 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-14 16:43:15,670 basehttp 22144 19976 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-03-14 16:43:15,690 basehttp 22144 16844 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-03-14 16:43:15,692 basehttp 22144 19976 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+ERROR 2025-03-14 16:43:26,721 log 22144 19976 Internal Server Error: /admin/inspection/cliinspector/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: inspection_cliinspector
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 1999, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 866, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 146, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 313, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: inspection_cliinspector
+ERROR 2025-03-14 16:43:26,737 basehttp 22144 19976 "GET /admin/inspection/cliinspector/ HTTP/1.1" 500 203164
+INFO 2025-03-14 16:46:43,224 basehttp 22144 19976 "GET /admin/auth/user/ HTTP/1.1" 200 14368
+INFO 2025-03-14 16:46:47,464 basehttp 22144 19976 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10859
+INFO 2025-03-14 16:46:47,480 basehttp 22144 19976 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-14 16:46:50,690 basehttp 22144 19976 "GET /admin/token_blacklist/outstandingtoken/ HTTP/1.1" 200 10677
+ERROR 2025-03-14 16:46:52,540 log 22144 19976 Internal Server Error: /admin/inspection/supervisor/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: inspection_supervisor
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 1999, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 866, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 146, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 313, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: inspection_supervisor
+ERROR 2025-03-14 16:46:52,555 basehttp 22144 19976 "GET /admin/inspection/supervisor/ HTTP/1.1" 500 203053
+INFO 2025-03-14 16:46:54,584 basehttp 22144 19976 "GET /admin/token_blacklist/outstandingtoken/ HTTP/1.1" 200 10677
+ERROR 2025-03-14 16:46:56,039 log 22144 19976 Internal Server Error: /admin/inspection/inspection/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: inspection_inspection
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 1999, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 866, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 146, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 313, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: inspection_inspection
+ERROR 2025-03-14 16:46:56,054 basehttp 22144 19976 "GET /admin/inspection/inspection/ HTTP/1.1" 500 203143
+INFO 2025-03-15 10:58:41,962 autoreload 4120 10584 Watching for file changes with StatReloader
+INFO 2025-03-15 11:12:17,349 autoreload 4120 10584 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\settings.py changed, reloading.
+INFO 2025-03-15 11:12:19,380 autoreload 11372 4788 Watching for file changes with StatReloader
+INFO 2025-03-15 11:12:22,569 autoreload 11372 4788 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\urls.py changed, reloading.
+INFO 2025-03-15 11:12:23,846 autoreload 8548 5484 Watching for file changes with StatReloader
+INFO 2025-03-15 11:50:36,278 autoreload 8548 5484 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\urls.py changed, reloading.
+INFO 2025-03-15 11:50:37,415 autoreload 17296 10736 Watching for file changes with StatReloader
+INFO 2025-03-15 11:52:44,787 autoreload 19924 11352 Watching for file changes with StatReloader
+INFO 2025-03-15 12:41:34,493 autoreload 19924 11352 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\urls.py changed, reloading.
+INFO 2025-03-15 12:41:35,839 autoreload 19020 15924 Watching for file changes with StatReloader
+INFO 2025-03-15 12:41:41,145 autoreload 19020 15924 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\urls.py changed, reloading.
+INFO 2025-03-15 12:41:42,377 autoreload 20292 11544 Watching for file changes with StatReloader
+INFO 2025-03-15 12:43:10,211 autoreload 20292 11544 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\urls.py changed, reloading.
+INFO 2025-03-15 12:43:11,357 autoreload 5412 15816 Watching for file changes with StatReloader
+INFO 2025-03-15 12:49:11,335 autoreload 5412 15816 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-03-15 12:49:12,555 autoreload 18856 12668 Watching for file changes with StatReloader
+INFO 2025-03-15 12:50:35,752 autoreload 14936 12872 Watching for file changes with StatReloader
+INFO 2025-03-15 12:50:54,047 basehttp 18856 5052 "GET / HTTP/1.1" 200 40
+INFO 2025-03-15 12:51:01,511 basehttp 18856 5052 "GET /admin/ HTTP/1.1" 200 10301
+INFO 2025-03-15 12:51:01,531 basehttp 18856 5052 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:01,540 basehttp 18856 5052 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:01,540 basehttp 18856 22288 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:01,542 basehttp 18856 20160 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:01,542 basehttp 18856 17268 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:01,543 basehttp 18856 17660 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:01,546 basehttp 18856 17660 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:01,552 basehttp 18856 17660 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:01,552 basehttp 18856 17268 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:19,225 basehttp 18856 17660 "GET / HTTP/1.1" 200 40
+INFO 2025-03-15 12:51:23,003 basehttp 18856 17660 "GET /admin/ HTTP/1.1" 200 10301
+INFO 2025-03-15 12:51:31,762 basehttp 18856 17660 "GET /admin/auth/user/ HTTP/1.1" 200 14368
+INFO 2025-03-15 12:51:31,796 basehttp 18856 17660 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,805 basehttp 18856 22288 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,807 basehttp 18856 20160 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,809 basehttp 18856 5052 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,811 basehttp 18856 17660 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,813 basehttp 18856 9780 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,814 basehttp 18856 20160 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,815 basehttp 18856 5052 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,815 basehttp 18856 22288 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,817 basehttp 18856 17660 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,820 basehttp 18856 9780 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,824 basehttp 18856 9780 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,848 basehttp 18856 17268 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-15 12:51:31,867 basehttp 18856 17268 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-03-15 12:51:31,966 basehttp 18856 17660 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-03-15 12:51:31,969 basehttp 18856 9780 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-03-15 12:51:39,734 basehttp 18856 9780 "GET /admin/ HTTP/1.1" 200 10301
+INFO 2025-03-15 14:52:44,516 autoreload 14936 12872 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\settings.py changed, reloading.
+INFO 2025-03-15 14:52:44,524 autoreload 18856 12668 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\settings.py changed, reloading.
+INFO 2025-03-15 14:52:46,478 autoreload 17464 2952 Watching for file changes with StatReloader
+INFO 2025-03-15 14:52:46,478 autoreload 12644 19812 Watching for file changes with StatReloader
+INFO 2025-03-15 15:34:12,317 autoreload 12644 19812 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:34:12,318 autoreload 17464 2952 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:34:14,633 autoreload 7504 8844 Watching for file changes with StatReloader
+INFO 2025-03-15 15:34:14,633 autoreload 7872 19112 Watching for file changes with StatReloader
+INFO 2025-03-15 15:34:59,364 autoreload 7872 19112 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:34:59,380 autoreload 7504 8844 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:35:00,378 autoreload 18540 17560 Watching for file changes with StatReloader
+INFO 2025-03-15 15:35:00,388 autoreload 12700 6620 Watching for file changes with StatReloader
+INFO 2025-03-15 15:35:07,554 autoreload 12700 6620 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:35:07,558 autoreload 18540 17560 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:35:08,502 autoreload 172 7952 Watching for file changes with StatReloader
+r
+INFO 2025-03-15 15:35:13,480 autoreload 20424 15048 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:35:13,488 autoreload 172 7952 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:35:14,393 autoreload 13964 15840 Watching for file changes with StatReloader
+INFO 2025-03-15 15:35:14,394 autoreload 11900 15928 Watching for file changes with StatReloader
+INFO 2025-03-15 15:35:21,475 autoreload 13964 15840 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:35:21,485 autoreload 11900 15928 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 15:35:22,334 autoreload 9516 10972 Watching for file changes with StatReloader
+INFO 2025-03-15 15:35:22,334 autoreload 9224 9648 Watching for file changes with StatReloader
+INFO 2025-03-15 16:01:05,555 autoreload 9516 10972 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 16:01:05,579 autoreload 9224 9648 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 16:01:06,722 autoreload 3396 21020 Watching for file changes with StatReloader
+INFO 2025-03-15 16:01:06,723 autoreload 16016 1852 Watching for file changes with StatReloader
+INFO 2025-03-15 16:08:31,060 autoreload 16016 1852 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\urls.py changed, reloading.
+INFO 2025-03-15 16:08:31,078 autoreload 3396 21020 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\urls.py changed, reloading.
+INFO 2025-03-15 16:08:31,958 autoreload 6292 440 Watching for file changes with StatReloader
+INFO 2025-03-15 16:08:31,962 autoreload 10508 13404 Watching for file changes with StatReloader
+INFO 2025-03-15 16:08:58,595 autoreload 10508 13404 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\urls.py changed, reloading.
+INFO 2025-03-15 16:08:58,605 autoreload 6292 440 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\urls.py changed, reloading.
+INFO 2025-03-15 16:08:59,570 autoreload 7436 8752 Watching for file changes with StatReloader
+INFO 2025-03-15 16:08:59,581 autoreload 9648 9224 Watching for file changes with StatReloader
+INFO 2025-03-15 16:35:17,614 autoreload 1196 4076 Watching for file changes with StatReloader
+INFO 2025-03-15 16:35:23,438 basehttp 7436 16772 "GET / HTTP/1.1" 200 40
+INFO 2025-03-15 16:35:32,136 basehttp 7436 16772 "GET / HTTP/1.1" 200 40
+INFO 2025-03-15 16:35:35,167 basehttp 7436 16772 "GET /admin/ HTTP/1.1" 200 10301
+INFO 2025-03-15 16:35:49,626 basehttp 7436 16772 "GET /admin/auth/group/ HTTP/1.1" 200 10761
+INFO 2025-03-15 16:35:49,657 basehttp 7436 16772 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-15 16:35:54,469 basehttp 7436 16772 "GET /admin/inspection/cliinspector/add/ HTTP/1.1" 200 12504
+INFO 2025-03-15 16:35:54,487 basehttp 7436 21168 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-15 16:35:54,552 basehttp 7436 16772 "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2025-03-15 16:35:54,558 basehttp 7436 768 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-03-15 16:35:54,568 basehttp 7436 21168 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2025-03-15 16:35:54,573 basehttp 7436 16772 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+ERROR 2025-03-15 16:35:56,941 log 7436 16772 Internal Server Error: /admin/inspection/fabricdefect/
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: inspection_fabricdefect
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 1999, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\options.py", line 866, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 146, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\contrib\admin\views\main.py", line 313, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\core\paginator.py", line 110, in count
+    return c()
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\query.py", line 620, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 630, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\query.py", line 616, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\USER\AppData\Roaming\Python\Python313\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: inspection_fabricdefect
+ERROR 2025-03-15 16:35:56,970 basehttp 7436 16772 "GET /admin/inspection/fabricdefect/ HTTP/1.1" 500 204250
+INFO 2025-03-15 16:36:10,725 basehttp 7436 16772 "GET /admin/inspection/cliinspector/add/ HTTP/1.1" 200 12504
+INFO 2025-03-15 17:02:19,109 basehttp 7436 15184 "GET / HTTP/1.1" 200 40
+INFO 2025-03-15 17:02:27,208 basehttp 7436 15184 "GET /admin/ HTTP/1.1" 200 10301
+WARNING 2025-03-15 17:05:43,884 log 7436 3112 Unauthorized: /api/login/
+WARNING 2025-03-15 17:05:43,885 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 401 31
+INFO 2025-03-15 17:07:29,508 basehttp 7436 20140 "GET /admin/auth/user/ HTTP/1.1" 200 14368
+INFO 2025-03-15 17:07:29,533 basehttp 7436 20140 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-15 17:07:39,384 basehttp 7436 20140 "GET /admin/auth/user/?o= HTTP/1.1" 200 14278
+INFO 2025-03-15 17:07:39,408 basehttp 7436 20140 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-15 17:07:53,399 basehttp 7436 20140 "GET /admin/password_change/ HTTP/1.1" 200 10454
+WARNING 2025-03-15 17:09:41,713 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:09:41,714 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:06,867 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:06,867 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:08,211 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:08,211 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:08,744 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:08,744 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:09,044 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:09,045 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:09,174 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:09,174 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:09,528 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:09,528 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:09,778 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:09,778 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:09,893 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:09,893 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:10,027 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:10,028 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:10,177 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:10,178 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:10,287 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:10,287 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:10,512 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:10,513 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:10,796 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:10,797 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:10:10,977 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:10:10,978 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:11:31,070 log 7436 3112 Unauthorized: /api/login/
+WARNING 2025-03-15 17:11:31,071 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 401 31
+WARNING 2025-03-15 17:12:09,261 log 7436 3112 Unsupported Media Type: /api/login/
+WARNING 2025-03-15 17:12:09,262 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 415 62
+WARNING 2025-03-15 17:13:32,852 log 7436 3112 Unauthorized: /api/login/
+WARNING 2025-03-15 17:13:32,853 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 401 31
+WARNING 2025-03-15 17:13:35,769 log 7436 3112 Unauthorized: /api/login/
+WARNING 2025-03-15 17:13:35,769 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 401 31
+WARNING 2025-03-15 17:13:37,259 log 7436 3112 Unauthorized: /api/login/
+WARNING 2025-03-15 17:13:37,259 basehttp 7436 3112 "POST /api/login/ HTTP/1.1" 401 31
+INFO 2025-03-15 17:13:41,986 basehttp 7436 12200 "GET /admin/password_change/ HTTP/1.1" 200 10454
+INFO 2025-03-15 17:13:59,857 basehttp 7436 12200 "POST /admin/password_change/ HTTP/1.1" 200 10647
+INFO 2025-03-15 17:18:34,530 autoreload 17436 18536 Watching for file changes with StatReloader
+INFO 2025-03-15 17:18:40,354 basehttp 17436 20992 "GET / HTTP/1.1" 200 40
+INFO 2025-03-15 17:22:24,685 basehttp 17436 20992 "GET / HTTP/1.1" 200 40
+INFO 2025-03-15 17:22:28,996 basehttp 17436 20992 "GET /admin/ HTTP/1.1" 200 10301
+WARNING 2025-03-15 17:22:53,895 log 17436 20204 Unauthorized: /api/login/
+WARNING 2025-03-15 17:22:53,896 basehttp 17436 20204 "POST /api/login/ HTTP/1.1" 401 31
+INFO 2025-03-15 17:23:31,262 basehttp 17436 20204 "POST /api/login/ HTTP/1.1" 200 524
+INFO 2025-03-15 21:32:26,766 autoreload 3672 10220 Watching for file changes with StatReloader
+INFO 2025-03-15 21:39:14,629 basehttp 3672 10616 "POST /api/login/ HTTP/1.1" 200 524
+ERROR 2025-03-15 21:43:11,027 log 3672 10604 Bad Gateway: /api/defects/analyze/
+ERROR 2025-03-15 21:43:11,029 basehttp 3672 10604 "POST /api/defects/analyze/ HTTP/1.1" 502 126
+INFO 2025-03-15 22:12:21,280 autoreload 3672 10220 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 22:12:22,228 autoreload 11772 16424 Watching for file changes with StatReloader
+INFO 2025-03-15 22:39:16,578 autoreload 15088 3000 Watching for file changes with StatReloader
+INFO 2025-03-15 22:41:05,350 autoreload 15088 3000 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 22:41:05,975 autoreload 11772 16424 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 22:41:06,394 autoreload 7824 16420 Watching for file changes with StatReloader
+INFO 2025-03-15 22:41:06,866 autoreload 9968 14192 Watching for file changes with StatReloader
+INFO 2025-03-15 22:45:35,046 autoreload 9968 14192 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 22:45:35,701 autoreload 7824 16420 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-15 22:45:36,200 autoreload 12088 3752 Watching for file changes with StatReloader
+INFO 2025-03-15 22:45:36,738 autoreload 9392 12880 Watching for file changes with StatReloader
+WARNING 2025-03-15 23:01:27,165 log 12088 7480 Unauthorized: /api/defects/analyze/
+WARNING 2025-03-15 23:01:27,167 basehttp 12088 7480 "POST /api/defects/analyze/ HTTP/1.1" 401 172
+INFO 2025-03-16 06:02:43,875 basehttp 12088 17284 "POST /api/login/ HTTP/1.1" 200 524
+ERROR 2025-03-16 06:07:42,008 log 12088 18240 Bad Gateway: /api/defects/analyze/
+ERROR 2025-03-16 06:07:42,011 basehttp 12088 18240 "POST /api/defects/analyze/ HTTP/1.1" 502 126
+INFO 2025-03-16 06:21:04,362 autoreload 12088 3752 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\settings.py changed, reloading.
+INFO 2025-03-16 06:21:04,377 autoreload 9392 12880 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\garment_inspection\settings.py changed, reloading.
+INFO 2025-03-16 06:21:06,005 autoreload 7484 18704 Watching for file changes with StatReloader
+INFO 2025-03-16 06:21:27,310 autoreload 7484 18704 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-16 06:21:27,340 autoreload 3960 17740 E:\Github\Garment inpection system\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-03-16 06:21:28,493 autoreload 8308 7148 Watching for file changes with StatReloader
+INFO 2025-03-16 06:21:28,496 autoreload 15516 17916 Watching for file changes with StatReloader
+INFO 2025-03-16 06:21:54,160 basehttp 15516 4200 "POST /api/login/ HTTP/1.1" 200 524
+WARNING 2025-03-16 06:22:41,312 log 15516 4200 Bad Request: /api/defects/analyze/
+WARNING 2025-03-16 06:22:41,314 basehttp 15516 4200 "POST /api/defects/analyze/ HTTP/1.1" 400 61
+ERROR 2025-03-16 06:24:15,676 views 15516 3648 Error in analyze_defect_image: no such table: inspection_fabricdefect
+ERROR 2025-03-16 06:24:15,678 log 15516 3648 Internal Server Error: /api/defects/analyze/
+ERROR 2025-03-16 06:24:15,681 basehttp 15516 3648 "POST /api/defects/analyze/ HTTP/1.1" 500 80
+WARNING 2025-03-16 11:05:29,067 log 15516 14968 Unauthorized: /api/defects/analyze/
+WARNING 2025-03-16 11:05:29,071 basehttp 15516 14968 "POST /api/defects/analyze/ HTTP/1.1" 401 172
+INFO 2025-03-16 11:05:41,472 basehttp 15516 14968 "POST /api/login/ HTTP/1.1" 200 524
+INFO 2025-03-16 11:06:19,803 basehttp 15516 14968 "POST /api/defects/analyze/ HTTP/1.1" 200 4289
+INFO 2025-03-16 11:10:36,100 basehttp 15516 15900 "GET / HTTP/1.1" 200 40
+WARNING 2025-03-16 11:10:36,183 log 15516 15900 Not Found: /favicon.ico
+WARNING 2025-03-16 11:10:36,183 basehttp 15516 15900 "GET /favicon.ico HTTP/1.1" 404 4958
+INFO 2025-03-16 11:10:36,580 basehttp 15516 15900 "GET / HTTP/1.1" 200 40
+INFO 2025-03-16 11:10:42,606 basehttp 15516 15900 "GET /admin/ HTTP/1.1" 200 10301
+INFO 2025-03-16 11:10:42,621 basehttp 15516 15900 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:42,621 basehttp 15516 10656 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:42,622 basehttp 15516 6248 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:42,628 basehttp 15516 15900 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:42,628 basehttp 15516 6248 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:42,628 basehttp 15516 10656 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:42,631 basehttp 15516 6248 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:42,638 basehttp 15516 6248 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:42,638 basehttp 15516 15900 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,429 basehttp 15516 6248 "GET /admin/inspection/cliinspector/ HTTP/1.1" 200 10486
+INFO 2025-03-16 11:10:47,448 basehttp 15516 6248 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,456 basehttp 15516 19864 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,456 basehttp 15516 15900 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,457 basehttp 15516 10656 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,462 basehttp 15516 18252 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,462 basehttp 15516 19864 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,464 basehttp 15516 18140 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,464 basehttp 15516 10656 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,464 basehttp 15516 15900 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,471 basehttp 15516 10656 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:47,488 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:10:47,503 basehttp 15516 6248 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:50,828 basehttp 15516 6248 "GET /admin/inspection/fabricdefect/ HTTP/1.1" 200 12370
+INFO 2025-03-16 11:10:50,850 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:10:56,467 basehttp 15516 6248 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10859
+INFO 2025-03-16 11:10:56,482 basehttp 15516 10656 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:56,484 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:10:59,750 basehttp 15516 6248 "GET /admin/inspection/cliinspector/add/ HTTP/1.1" 200 12504
+INFO 2025-03-16 11:10:59,768 basehttp 15516 10656 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:59,772 basehttp 15516 18140 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:10:59,776 basehttp 15516 18140 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-03-16 11:10:59,842 basehttp 15516 6248 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-03-16 11:10:59,848 basehttp 15516 18140 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-03-16 11:11:03,015 basehttp 15516 18140 "GET /admin/auth/user/add/ HTTP/1.1" 200 15038
+INFO 2025-03-16 11:11:03,035 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:11:03,042 basehttp 15516 18140 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2025-03-16 11:11:03,057 basehttp 15516 6248 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2025-03-16 11:11:05,824 basehttp 15516 6248 "GET /admin/auth/group/ HTTP/1.1" 200 10761
+INFO 2025-03-16 11:11:05,839 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:11:08,150 basehttp 15516 6248 "GET /admin/inspection/cliinspector/ HTTP/1.1" 200 10486
+INFO 2025-03-16 11:11:08,167 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:11:09,673 basehttp 15516 6248 "GET /admin/inspection/inspection/ HTTP/1.1" 200 10467
+INFO 2025-03-16 11:11:09,692 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:11:12,081 basehttp 15516 6248 "GET /admin/inspection/supervisor/ HTTP/1.1" 200 10467
+INFO 2025-03-16 11:11:12,100 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:11:13,979 basehttp 15516 6248 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10859
+INFO 2025-03-16 11:11:14,001 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:11:16,515 basehttp 15516 6248 "GET /admin/token_blacklist/outstandingtoken/ HTTP/1.1" 200 13133
+INFO 2025-03-16 11:11:16,541 basehttp 15516 6248 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-03-16 11:11:20,999 basehttp 15516 6248 "GET /admin/inspection/cliinspector/ HTTP/1.1" 200 10486
+INFO 2025-03-16 11:11:21,022 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:11:22,539 basehttp 15516 6248 "GET /admin/auth/user/ HTTP/1.1" 200 14833
+INFO 2025-03-16 11:11:22,552 basehttp 15516 18140 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-03-16 11:11:22,555 basehttp 15516 6248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:11:22,568 basehttp 15516 6248 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-03-16 11:19:06,897 basehttp 15516 8212 "GET /admin/inspection/cliinspector/add/ HTTP/1.1" 200 12504
+INFO 2025-03-16 11:19:06,924 basehttp 15516 8212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:19:08,695 basehttp 15516 8212 "GET /admin/inspection/inspection/ HTTP/1.1" 200 10467
+INFO 2025-03-16 11:19:08,711 basehttp 15516 8212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:19:09,540 basehttp 15516 8212 "GET /admin/inspection/inspection/ HTTP/1.1" 200 10467
+INFO 2025-03-16 11:19:09,562 basehttp 15516 8212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-16 11:19:12,198 basehttp 15516 8212 "GET /admin/inspection/inspection/add/ HTTP/1.1" 200 18367
+INFO 2025-03-16 11:19:12,221 basehttp 15516 8212 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-22 20:47:05,688 autoreload 20620 31120 Watching for file changes with StatReloader
+INFO 2025-03-22 20:47:23,272 basehttp 20620 9668 "GET / HTTP/1.1" 200 40
+WARNING 2025-03-22 20:47:23,548 log 20620 9668 Not Found: /favicon.ico
+WARNING 2025-03-22 20:47:23,550 basehttp 20620 9668 "GET /favicon.ico HTTP/1.1" 404 4958
+INFO 2025-03-22 20:48:41,387 basehttp 20620 31696 "GET /admin/login/?next=/login HTTP/1.1" 200 4158
+INFO 2025-03-22 20:48:41,992 basehttp 20620 15280 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-03-22 20:48:42,038 basehttp 20620 31696 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-03-22 20:48:42,044 basehttp 20620 27332 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-03-22 20:48:42,044 basehttp 20620 21036 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-03-22 20:48:42,057 basehttp 20620 11424 "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-03-22 20:48:42,059 basehttp 20620 13280 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-03-22 20:48:42,072 basehttp 20620 13280 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-03-22 20:48:52,395 basehttp 20620 13280 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-22 20:48:52,424 basehttp 20620 13280 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-22 20:49:02,629 basehttp 20620 13280 "GET /admin/login/?next=/login HTTP/1.1" 200 4158
+INFO 2025-03-23 13:57:54,054 autoreload 12084 1236 Watching for file changes with StatReloader
+INFO 2025-03-23 13:57:58,849 basehttp 12084 30452 "GET / HTTP/1.1" 200 40
+WARNING 2025-03-23 13:57:59,208 log 12084 30452 Not Found: /favicon.ico
+WARNING 2025-03-23 13:57:59,211 basehttp 12084 30452 "GET /favicon.ico HTTP/1.1" 404 4958
+INFO 2025-03-23 13:58:06,757 basehttp 12084 30452 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-03-23 13:58:06,909 basehttp 12084 30452 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-03-23 13:58:06,949 basehttp 12084 30452 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-23 13:58:06,949 basehttp 12084 11920 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-03-23 13:58:06,950 basehttp 12084 12428 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-03-23 13:58:06,951 basehttp 12084 19072 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-03-23 13:58:06,952 basehttp 12084 14672 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-03-23 13:58:06,955 basehttp 12084 33032 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-03-23 13:58:06,978 basehttp 12084 33032 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-03-23 13:58:17,602 basehttp 12084 33032 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-03-23 13:58:17,649 basehttp 12084 33032 "GET /admin/ HTTP/1.1" 200 10293
+INFO 2025-03-23 13:58:17,920 basehttp 12084 33032 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-03-23 13:58:17,940 basehttp 12084 19072 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-03-23 13:58:17,945 basehttp 12084 11920 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-03-23 13:58:30,516 basehttp 12084 11920 "GET /admin/inspection/inspection/ HTTP/1.1" 200 10459
+INFO 2025-03-23 13:58:30,549 basehttp 12084 11920 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-03-23 13:58:30,551 basehttp 12084 14672 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-03-23 13:58:30,560 basehttp 12084 30452 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-03-23 13:58:30,564 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 13:58:30,569 basehttp 12084 12428 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2025-03-23 13:58:30,582 basehttp 12084 11920 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-03-23 13:58:30,585 basehttp 12084 14672 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-03-23 13:58:30,589 basehttp 12084 30452 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-03-23 13:58:30,637 basehttp 12084 33032 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-03-23 13:58:30,646 basehttp 12084 19072 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-03-23 13:58:30,688 basehttp 12084 33032 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-03-23 13:58:30,790 basehttp 12084 33032 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-03-23 13:58:34,764 basehttp 12084 33032 "GET /admin/inspection/inspection/add/ HTTP/1.1" 200 18396
+INFO 2025-03-23 13:58:34,793 basehttp 12084 33032 "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2025-03-23 13:58:34,797 basehttp 12084 30452 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-03-23 13:58:34,803 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 13:58:34,808 basehttp 12084 33032 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2025-03-23 13:58:34,818 basehttp 12084 19072 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-03-23 13:58:34,825 basehttp 12084 33032 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-03-23 13:59:25,614 basehttp 12084 33032 "POST /admin/inspection/inspection/add/ HTTP/1.1" 200 18818
+INFO 2025-03-23 13:59:25,641 basehttp 12084 33032 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 13:59:28,645 basehttp 12084 33032 "GET /admin/inspection/cliinspector/ HTTP/1.1" 200 10478
+INFO 2025-03-23 13:59:28,674 basehttp 12084 33032 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 13:59:34,028 basehttp 12084 33032 "GET /admin/auth/group/ HTTP/1.1" 200 10753
+INFO 2025-03-23 13:59:34,056 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 13:59:34,068 basehttp 12084 33032 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-03-23 13:59:36,035 basehttp 12084 33032 "GET /admin/auth/user/ HTTP/1.1" 200 15267
+INFO 2025-03-23 13:59:36,065 basehttp 12084 33032 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 13:59:36,076 basehttp 12084 19072 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-03-23 13:59:36,113 basehttp 12084 19072 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-03-23 13:59:42,330 basehttp 12084 19072 "GET /admin/inspection/cliinspector/ HTTP/1.1" 200 10478
+INFO 2025-03-23 13:59:42,383 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 13:59:44,952 basehttp 12084 19072 "GET /admin/inspection/cliinspector/add/ HTTP/1.1" 200 12496
+INFO 2025-03-23 13:59:45,063 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:00:28,247 basehttp 12084 19072 "POST /admin/inspection/cliinspector/add/ HTTP/1.1" 302 0
+INFO 2025-03-23 14:00:28,280 basehttp 12084 19072 "GET /admin/inspection/cliinspector/ HTTP/1.1" 200 12701
+INFO 2025-03-23 14:00:28,335 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:00:32,951 basehttp 12084 19072 "GET /admin/inspection/fabricdefect/ HTTP/1.1" 200 12362
+INFO 2025-03-23 14:00:32,978 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:00:39,623 basehttp 12084 19072 "GET /admin/inspection/inspection/ HTTP/1.1" 200 10459
+INFO 2025-03-23 14:00:39,655 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:00:41,730 basehttp 12084 19072 "GET /admin/inspection/supervisor/ HTTP/1.1" 200 10459
+INFO 2025-03-23 14:00:41,756 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:00:43,463 basehttp 12084 19072 "GET /admin/inspection/supervisor/ HTTP/1.1" 200 10459
+INFO 2025-03-23 14:00:43,491 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:00:44,327 basehttp 12084 19072 "GET /admin/inspection/supervisor/add/ HTTP/1.1" 200 13124
+INFO 2025-03-23 14:00:44,361 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:01:19,236 basehttp 12084 19072 "POST /admin/inspection/supervisor/add/ HTTP/1.1" 302 0
+INFO 2025-03-23 14:01:19,268 basehttp 12084 19072 "GET /admin/inspection/supervisor/ HTTP/1.1" 200 12652
+INFO 2025-03-23 14:01:19,300 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:01:21,806 basehttp 12084 19072 "GET /admin/inspection/inspection/ HTTP/1.1" 200 10459
+INFO 2025-03-23 14:01:21,847 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:01:25,407 basehttp 12084 19072 "GET /admin/inspection/inspection/add/ HTTP/1.1" 200 18466
+INFO 2025-03-23 14:01:25,438 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:01:38,110 basehttp 12084 19072 "POST /admin/inspection/inspection/add/ HTTP/1.1" 302 0
+INFO 2025-03-23 14:01:38,142 basehttp 12084 19072 "GET /admin/inspection/inspection/ HTTP/1.1" 200 12770
+INFO 2025-03-23 14:01:38,352 basehttp 12084 19072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:19:12,618 autoreload 35048 31476 Watching for file changes with StatReloader
+INFO 2025-03-23 14:19:16,029 basehttp 35048 17956 "GET / HTTP/1.1" 200 40
+INFO 2025-03-23 14:19:20,731 basehttp 35048 17956 "GET /admin/login/?next=/login HTTP/1.1" 302 0
+INFO 2025-03-23 14:19:20,780 basehttp 35048 17956 "GET /admin/ HTTP/1.1" 200 11411
+INFO 2025-03-23 14:19:23,304 basehttp 35048 17956 "GET /admin/inspection/cliinspector/ HTTP/1.1" 200 12489
+INFO 2025-03-23 14:19:23,360 basehttp 35048 17956 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:19:26,122 basehttp 35048 17956 "GET /admin/inspection/cliinspector/add/ HTTP/1.1" 200 12496
+INFO 2025-03-23 14:19:26,161 basehttp 35048 17956 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 14:44:33,167 autoreload 20956 33152 Watching for file changes with StatReloader
+INFO 2025-03-23 14:45:19,980 autoreload 20956 33152 C:\Users\Hassan\Desktop\SDGP_frontend\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-03-23 14:45:21,298 autoreload 11616 36148 Watching for file changes with StatReloader
+INFO 2025-03-23 14:51:46,718 basehttp 11616 20764 "GET /admin/ HTTP/1.1" 200 11411
+WARNING 2025-03-23 14:53:03,957 log 11616 33336 Unauthorized: /api/inspection_count/
+WARNING 2025-03-23 14:53:03,958 basehttp 11616 33336 "GET //api/inspection_count/?date=2025-03-23 HTTP/1.1" 401 5214
+INFO 2025-03-23 14:53:04,562 basehttp 11616 34100 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2025-03-23 14:53:04,575 basehttp 11616 34100 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2025-03-23 14:53:04,585 basehttp 11616 27076 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2025-03-23 14:53:04,600 basehttp 11616 34100 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-03-23 14:53:04,601 basehttp 11616 33336 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-03-23 14:53:04,624 basehttp 11616 27076 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-03-23 14:53:04,625 basehttp 11616 34100 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-03-23 14:53:04,628 basehttp 11616 33336 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2025-03-23 14:53:04,650 basehttp 11616 36772 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2025-03-23 14:53:04,686 basehttp 11616 26800 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2025-03-23 14:53:04,695 basehttp 11616 35632 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-03-23 14:53:04,712 basehttp 11616 35632 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+WARNING 2025-03-23 14:53:45,029 log 11616 32860 Unauthorized: /api/inspection_count/
+WARNING 2025-03-23 14:53:45,030 basehttp 11616 32860 "GET //api/inspection_count/?date=2025-03-23 HTTP/1.1" 401 5214
+INFO 2025-03-23 14:53:48,021 basehttp 11616 32860 "GET /admin/ HTTP/1.1" 200 11411
+INFO 2025-03-23 14:53:51,957 basehttp 11616 32860 "GET /admin/ HTTP/1.1" 200 11411
+WARNING 2025-03-23 15:23:46,766 log 11616 35076 Unauthorized: /api/inspection_count/
+WARNING 2025-03-23 15:23:46,769 basehttp 11616 35076 "GET //api/inspection_count/?date=2025-03-23 HTTP/1.1" 401 5214
+WARNING 2025-03-23 15:23:49,136 log 11616 35076 Unauthorized: /api/inspection_count/
+WARNING 2025-03-23 15:23:49,139 basehttp 11616 35076 "GET //api/inspection_count/?date=2025-03-23 HTTP/1.1" 401 5214
+WARNING 2025-03-23 15:23:52,945 log 11616 35076 Unauthorized: /api/inspection_count/
+WARNING 2025-03-23 15:23:52,947 basehttp 11616 35076 "GET //api/inspection_count/?date=2025-03-23 HTTP/1.1" 401 5214
+WARNING 2025-03-23 15:23:55,540 log 11616 35076 Unauthorized: /api/inspection_count/
+WARNING 2025-03-23 15:23:55,541 basehttp 11616 35076 "GET //api/inspection_count/?date=2025-03-23 HTTP/1.1" 401 5214
+WARNING 2025-03-23 15:24:17,766 log 11616 35076 Unauthorized: /api/inspection_count/
+WARNING 2025-03-23 15:24:17,769 basehttp 11616 35076 "GET //api/inspection_count/?date=2025-03-23 HTTP/1.1" 401 5214
+INFO 2025-03-23 15:24:20,091 basehttp 11616 35076 "GET /admin/ HTTP/1.1" 200 11411
+INFO 2025-03-23 15:24:22,160 basehttp 11616 35076 "GET /admin/auth/user/ HTTP/1.1" 200 15267
+INFO 2025-03-23 15:24:22,213 basehttp 11616 35076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 15:27:42,256 basehttp 11616 35076 "GET /admin/token_blacklist/ HTTP/1.1" 200 6009
+INFO 2025-03-23 15:27:44,561 basehttp 11616 35076 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 15:27:44,584 basehttp 11616 35076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 15:27:48,010 basehttp 11616 35076 "GET /admin/token_blacklist/ HTTP/1.1" 200 6009
+INFO 2025-03-23 15:27:49,326 basehttp 11616 35076 "GET /admin/token_blacklist/outstandingtoken/ HTTP/1.1" 200 13125
+INFO 2025-03-23 15:27:56,651 basehttp 11616 35076 "GET /admin/token_blacklist/ HTTP/1.1" 200 6009

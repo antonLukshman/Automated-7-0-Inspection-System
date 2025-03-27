@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'flag_raised_screen.dart';
 import 'profile_screen.dart';
-import '../widgets/flag_form.dart';
+import '/widgets/flag_form.dart';
 
 class FlagScreen extends StatelessWidget {
   const FlagScreen({super.key});

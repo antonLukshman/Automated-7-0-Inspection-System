@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/flag_screen.dart';
+import '../../../frontend/lib/screens/flag_screen.dart';
 
 void main() {
   runApp(const MyApp());

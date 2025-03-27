@@ -892,3 +892,94 @@ INFO 2025-03-23 15:27:44,584 basehttp 11616 35076 "GET /admin/jsi18n/ HTTP/1.1" 
 INFO 2025-03-23 15:27:48,010 basehttp 11616 35076 "GET /admin/token_blacklist/ HTTP/1.1" 200 6009
 INFO 2025-03-23 15:27:49,326 basehttp 11616 35076 "GET /admin/token_blacklist/outstandingtoken/ HTTP/1.1" 200 13125
 INFO 2025-03-23 15:27:56,651 basehttp 11616 35076 "GET /admin/token_blacklist/ HTTP/1.1" 200 6009
+INFO 2025-03-23 16:17:08,327 autoreload 42164 40964 Watching for file changes with StatReloader
+INFO 2025-03-23 16:17:14,794 basehttp 42164 42388 "GET / HTTP/1.1" 200 40
+WARNING 2025-03-23 16:18:02,488 log 42164 42388 Unauthorized: /api/inspection_count/
+WARNING 2025-03-23 16:18:02,490 basehttp 42164 42388 "GET /api/inspection_count/?date=2025-03-23 HTTP/1.1" 401 5214
+INFO 2025-03-23 16:31:00,156 autoreload 43584 10252 Watching for file changes with StatReloader
+INFO 2025-03-23 16:31:03,449 basehttp 43584 43048 "GET / HTTP/1.1" 200 40
+WARNING 2025-03-23 16:31:09,710 log 43584 43048 Method Not Allowed: /login/
+WARNING 2025-03-23 16:31:09,714 basehttp 43584 43048 "GET /login/ HTTP/1.1" 405 5549
+INFO 2025-03-23 16:31:18,286 basehttp 43584 43048 "GET /admin/ HTTP/1.1" 200 11411
+INFO 2025-03-23 16:31:18,326 basehttp 43584 43048 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:18,329 basehttp 43584 22508 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:18,336 basehttp 43584 44896 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:18,349 basehttp 43584 44900 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:18,354 basehttp 43584 44904 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:18,358 basehttp 43584 44908 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:18,364 basehttp 43584 44904 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:18,373 basehttp 43584 44904 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:18,377 basehttp 43584 44908 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,425 basehttp 43584 44908 "GET /admin/auth/user/ HTTP/1.1" 200 15707
+INFO 2025-03-23 16:31:29,455 basehttp 43584 44900 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,462 basehttp 43584 44908 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,467 basehttp 43584 43048 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,480 basehttp 43584 44896 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,484 basehttp 43584 22508 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,493 basehttp 43584 44904 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 16:31:29,497 basehttp 43584 44900 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,502 basehttp 43584 44908 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,505 basehttp 43584 43048 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,516 basehttp 43584 44896 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,623 basehttp 43584 43048 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,720 basehttp 43584 44908 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,724 basehttp 43584 44900 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:29,802 basehttp 43584 44904 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:30,188 basehttp 43584 44896 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-03-23 16:31:30,210 basehttp 43584 43048 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+WARNING 2025-03-23 16:31:45,971 log 43584 43048 Unauthorized: /api/inspection_count/
+WARNING 2025-03-23 16:31:45,974 basehttp 43584 43048 "GET /api/inspection_count/?date=2025-03-23 HTTP/1.1" 401 5214
+INFO 2025-03-23 16:32:05,997 basehttp 43584 43048 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 16:32:06,028 basehttp 43584 43048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 16:32:12,920 basehttp 43584 43048 "GET /admin/token_blacklist/blacklistedtoken/add/ HTTP/1.1" 200 12519
+INFO 2025-03-23 16:32:12,953 basehttp 43584 44896 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 16:32:12,960 basehttp 43584 43048 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-03-23 16:32:12,967 basehttp 43584 44904 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-03-23 16:32:12,970 basehttp 43584 44896 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-03-23 16:32:12,984 basehttp 43584 44904 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-03-23 17:04:45,215 basehttp 43584 45460 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 17:04:45,261 basehttp 43584 45460 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:04:47,401 basehttp 43584 45460 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 17:04:47,430 basehttp 43584 45460 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:04:49,375 basehttp 43584 45460 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 17:04:49,423 basehttp 43584 45460 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:04:52,756 basehttp 43584 45460 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 17:04:52,780 basehttp 43584 45460 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:04:54,989 basehttp 43584 45460 "GET /admin/token_blacklist/outstandingtoken/ HTTP/1.1" 200 13125
+INFO 2025-03-23 17:05:05,794 basehttp 43584 45460 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 17:05:05,820 basehttp 43584 45460 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:05:15,907 basehttp 43584 45460 "GET /admin/token_blacklist/outstandingtoken/ HTTP/1.1" 200 13125
+INFO 2025-03-23 17:05:32,283 basehttp 43584 45460 "GET /admin/token_blacklist/outstandingtoken/5/change/ HTTP/1.1" 200 14409
+INFO 2025-03-23 17:05:32,308 basehttp 43584 45460 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-03-23 17:06:46,731 log 43584 45460 Not Found: /auth/login
+WARNING 2025-03-23 17:06:46,732 basehttp 43584 45460 "GET /auth/login HTTP/1.1" 404 5234
+WARNING 2025-03-23 17:07:50,486 log 43584 45460 Method Not Allowed: /login/
+WARNING 2025-03-23 17:07:50,488 basehttp 43584 45460 "GET /login/ HTTP/1.1" 405 5549
+INFO 2025-03-23 17:07:50,524 basehttp 43584 43744 "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,527 basehttp 43584 45460 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,528 basehttp 43584 39716 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,529 basehttp 43584 47072 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,540 basehttp 43584 33272 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,550 basehttp 43584 43744 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,556 basehttp 43584 45460 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,558 basehttp 43584 47108 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,568 basehttp 43584 39716 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,574 basehttp 43584 33272 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,578 basehttp 43584 47072 "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-03-23 17:07:50,580 basehttp 43584 43744 "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2025-03-23 17:08:04,505 basehttp 43584 47072 "GET /admin/login/?next=/login HTTP/1.1" 302 0
+INFO 2025-03-23 17:08:04,543 basehttp 43584 47072 "GET /admin/ HTTP/1.1" 200 11411
+INFO 2025-03-23 17:08:30,341 basehttp 43584 47072 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 17:08:30,371 basehttp 43584 47072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:08:39,278 basehttp 43584 47072 "GET /admin/token_blacklist/blacklistedtoken/add/ HTTP/1.1" 200 12519
+INFO 2025-03-23 17:08:39,313 basehttp 43584 47072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:09:13,079 basehttp 43584 47072 "GET /admin/token_blacklist/outstandingtoken/ HTTP/1.1" 200 13125
+INFO 2025-03-23 17:09:33,176 basehttp 43584 47072 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 17:09:33,201 basehttp 43584 47072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:09:37,553 basehttp 43584 47072 "GET /admin/token_blacklist/blacklistedtoken/add/ HTTP/1.1" 200 12519
+INFO 2025-03-23 17:09:37,579 basehttp 43584 47072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:09:51,698 basehttp 43584 47072 "GET /admin/auth/user/ HTTP/1.1" 200 15707
+INFO 2025-03-23 17:09:51,735 basehttp 43584 47072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-23 17:14:05,707 basehttp 43584 47072 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
+INFO 2025-03-23 17:14:05,735 basehttp 43584 47072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-03-24 08:58:59,310 autoreload 63128 77820 Watching for file changes with StatReloader

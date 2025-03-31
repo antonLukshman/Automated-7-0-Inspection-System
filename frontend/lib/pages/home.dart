@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
 
   // Sample data for variables
   Map<String, double> variables = {
-    'Total Inspections done': 30,
+    'Total Inspections donee': 30,
     'Total flags raised': 40,
     'Defect percentage': 30,
   };
@@ -62,6 +62,43 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+    
+    Widget _buildIconButton(int index, IconData icon) {
+    return GestureDetector(
+      onTap: () => _onIconPressed(index), // Handle icon press
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        decoration: BoxDecoration(
+          color: _selectedIndex == index
+              ? AppColors.secondaryBackground
+              : Colors.transparent, // Optional: background color when selected
+          borderRadius: BorderRadius.circular(50), // Round the corners
+          boxShadow: _selectedIndex == index
+              ? [
+                  BoxShadow(
+                    color: Colors.blueAccent.withOpacity(0.5),
+                    spreadRadius: 3,
+                    blurRadius: 6,
+                    offset: Offset(0, 3), // Shadow position
+                  ),
+                ]
+              : [], // No shadow when not selected
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0), // Padding inside the icon button
+          child: Icon(
+            icon,
+            size:
+                _selectedIndex == index ? 40 : 30, // Larger icon when selected
+            color: _selectedIndex == index
+                ? Colors.blueAccent // Color when selected
+                : Colors.grey, // Default color when not selected
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,19 +108,11 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
-              // Top SVG buttons
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
-                    icon: const Icon(Icons.settings), // Replace with your SVG
-                    onPressed: () {},
-                  ),
-                  IconButton(
-                    icon: const Icon(
-                        Icons.notifications), // Replace with your SVG
-                    onPressed: () {},
-                  ),
+                  _buildIconButton(4, Icons.settings),
+                  _buildIconButton(5, Icons.notifications),
                 ],
               ),
 
@@ -92,12 +121,11 @@ class _HomePageState extends State<HomePage> {
               // Title text
               const Text(
                 'Daily Report',
-                
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.w900,
                   //color: Colors.black
-                  color: AppColors.textSecondary
+                  //color: AppColors.textSecondary
                 ),
               ),
 
@@ -120,28 +148,38 @@ class _HomePageState extends State<HomePage> {
               // Variables and values
               ...variables.entries.map((entry) => Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ContainerStyle.reusableContainer(
-                          child: Text(
-                            entry.key,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
+                    child: Container(
+                       width: double.infinity, // Ensure the container spans the full width
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0), // Add vertical padding
+                      decoration: BoxDecoration(
+                        color: AppColors
+                            .primary, // Set your desired background color here
+                        borderRadius: BorderRadius.circular(
+                            10), // Optional: rounded corners
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ContainerStyle.reusableContainer(
+                            child: Text(
+                              entry.key,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
-                        ),
-                        ContainerStyle.reusableContainer2(
-                          child: Text(
-                            '${entry.value.toInt()}%',
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                          ContainerStyle.reusableContainer2(
+                            child: Text(
+                              '${entry.value.toInt()}%',
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                        )
-                      ],
+                          )
+                        ],
+                      ),
                     ),
                   )),
 
@@ -151,39 +189,10 @@ class _HomePageState extends State<HomePage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  IconButton(
-                    icon: const Icon(Icons.home), // Replace with your SVG
-                    iconSize: _selectedIndex == 0
-                        ? 40
-                        : 30, // Bigger size for selected
-                    color: _selectedIndex == 0
-                        ? const Color.fromARGB(255, 241, 44, 70)
-                        : Colors.grey, // Selected color
-                    onPressed: () => _onIconPressed(0),
-                  ),
-                  IconButton(
-                    icon: const Icon(
-                        Icons.camera_alt_outlined), // Replace with your SVG
-                    iconSize: _selectedIndex == 1
-                        ? 40
-                        : 30, // Bigger size for selected
-                    color: _selectedIndex == 1
-                        ? const Color.fromARGB(255, 243, 33, 33)
-                        : Colors.grey, // Selected color
-                    onPressed: () => _onIconPressed(1),
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.person), // Replace with your SVG
-                    iconSize: _selectedIndex == 2
-                        ? 40
-                        : 30, // Bigger size for selected
-                    color: _selectedIndex == 2
-                        ? const Color.fromARGB(255, 244, 33, 36)
-                        : Colors.grey,
-                         // Selected color
-                    
-                    onPressed: () => _onIconPressed(2),
-                  ),
+                                    _buildIconButton(0, Icons.home),
+                  _buildIconButton(1, Icons.camera_alt_outlined),
+                  _buildIconButton(2, Icons.person),
+
                 ],
               ),
             ],

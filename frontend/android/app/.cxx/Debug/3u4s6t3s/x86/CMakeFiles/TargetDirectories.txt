@@ -1,0 +1,2 @@
+C:/Users/Hassan/Desktop/SDGP_frontend/Automated-7-0-Inspection-System/frontend/android/app/.cxx/Debug/3u4s6t3s/x86/CMakeFiles/edit_cache.dir
+C:/Users/Hassan/Desktop/SDGP_frontend/Automated-7-0-Inspection-System/frontend/android/app/.cxx/Debug/3u4s6t3s/x86/CMakeFiles/rebuild_cache.dir

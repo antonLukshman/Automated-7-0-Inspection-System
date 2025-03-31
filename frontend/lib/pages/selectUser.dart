@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/pages/login.dart';
+import 'login.dart';
 import '../styles/app_styles.dart';
 
 class SelectUserPage extends StatefulWidget {

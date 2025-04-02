@@ -1010,3 +1010,46 @@ INFO 2025-04-02 14:20:17,092 autoreload 2500 4736 C:\Programming\Cloned Shii\Fin
 INFO 2025-04-02 14:20:17,709 autoreload 21896 22048 Watching for file changes with StatReloader
 INFO 2025-04-02 14:20:17,740 autoreload 9720 15616 Watching for file changes with StatReloader
 INFO 2025-04-02 14:20:17,758 autoreload 15684 8060 Watching for file changes with StatReloader
+WARNING 2025-04-02 14:25:03,757 log 21896 8404 Unauthorized: /api/login/
+WARNING 2025-04-02 14:25:03,757 basehttp 21896 8404 "POST /api/login/ HTTP/1.1" 401 31
+WARNING 2025-04-02 14:25:22,447 log 21896 8404 Unauthorized: /api/login/
+WARNING 2025-04-02 14:25:22,447 basehttp 21896 8404 "POST /api/login/ HTTP/1.1" 401 31
+WARNING 2025-04-02 14:25:53,020 log 21896 8404 Unauthorized: /api/login/
+WARNING 2025-04-02 14:25:53,021 basehttp 21896 8404 "POST /api/login/ HTTP/1.1" 401 31
+INFO 2025-04-02 14:26:17,426 basehttp 21896 8404 "POST /api/login/ HTTP/1.1" 200 524
+INFO 2025-04-02 14:41:40,749 autoreload 15684 8060 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:41:40,924 autoreload 9720 15616 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:41:40,985 autoreload 21896 22048 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:41:41,332 autoreload 21424 11292 Watching for file changes with StatReloader
+INFO 2025-04-02 14:41:41,510 autoreload 18552 14356 Watching for file changes with StatReloader
+INFO 2025-04-02 14:41:41,627 autoreload 18712 18592 Watching for file changes with StatReloader
+INFO 2025-04-02 14:41:45,717 autoreload 300 12428 Watching for file changes with StatReloader
+INFO 2025-04-02 14:42:10,700 autoreload 3664 11216 Watching for file changes with StatReloader
+INFO 2025-04-02 14:44:04,060 autoreload 3664 11216 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:44:04,160 autoreload 300 12428 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:44:04,541 autoreload 18712 18592 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:44:04,547 autoreload 18552 14356 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:44:04,674 autoreload 9116 6984 Watching for file changes with StatReloader
+INFO 2025-04-02 14:44:04,767 autoreload 19584 15224 Watching for file changes with StatReloader
+INFO 2025-04-02 14:44:04,789 autoreload 21424 11292 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:44:05,218 autoreload 9104 21392 Watching for file changes with StatReloader
+INFO 2025-04-02 14:44:05,227 autoreload 13560 1924 Watching for file changes with StatReloader
+INFO 2025-04-02 14:44:05,506 autoreload 13336 19536 Watching for file changes with StatReloader
+INFO 2025-04-02 14:44:13,866 autoreload 16124 19904 Watching for file changes with StatReloader
+INFO 2025-04-02 14:48:52,063 autoreload 19900 14092 Watching for file changes with StatReloader
+INFO 2025-04-02 14:50:56,450 autoreload 9116 6984 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:50:56,656 autoreload 16124 19904 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:50:56,695 autoreload 13336 19536 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:50:56,847 autoreload 19900 14092 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:50:56,988 autoreload 9104 21392 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:50:57,047 autoreload 19312 14512 Watching for file changes with StatReloader
+INFO 2025-04-02 14:50:57,121 autoreload 13560 1924 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:50:57,315 autoreload 19584 15224 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\urls.py changed, reloading.
+INFO 2025-04-02 14:50:57,384 autoreload 16608 8564 Watching for file changes with StatReloader
+INFO 2025-04-02 14:50:57,443 autoreload 21732 8292 Watching for file changes with StatReloader
+INFO 2025-04-02 14:50:57,671 autoreload 11388 4032 Watching for file changes with StatReloader
+INFO 2025-04-02 14:50:57,864 autoreload 14644 20004 Watching for file changes with StatReloader
+INFO 2025-04-02 14:50:58,003 autoreload 7724 19832 Watching for file changes with StatReloader
+INFO 2025-04-02 14:50:58,140 autoreload 5732 21220 Watching for file changes with StatReloader
+INFO 2025-04-02 14:51:04,409 basehttp 19312 18444 "GET / HTTP/1.1" 200 40
+INFO 2025-04-02 14:51:07,362 basehttp 19312 18444 "GET /admin/ HTTP/1.1" 200 12179

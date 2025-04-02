@@ -889,3 +889,123 @@ def mark_all_notifications_read(request):
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
     
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_user_role(request):
+    """
+    Get the role of the authenticated user.
+    Returns the role type and user details.
+    """
+    try:
+        user = request.user
+        user_data = {
+            'user_id': user.id,
+            'username': user.username,
+            'email': user.email
+        }
+        
+        # Check if user is a CLI Inspector
+        cli_inspectors = CLIInspector.objects.filter(email=user.email)
+        if cli_inspectors.exists():
+            inspector = cli_inspectors.first()
+            return Response({
+                'role': 'inspector',
+                'user': user_data,
+                'details': CLIInspectorSerializer(inspector).data
+            })
+            
+        # Check if user is a Supervisor
+        supervisors = Supervisor.objects.filter(email=user.email)
+        if supervisors.exists():
+            supervisor = supervisors.first()
+            return Response({
+                'role': 'supervisor',
+                'user': user_data,
+                'details': SupervisorSerializer(supervisor).data
+            })
+        
+        # User exists but doesn't have a specific role
+        return Response({
+            'role': 'undefined',
+            'user': user_data,
+            'message': 'User exists but is not assigned to a role.'
+        })
+        
+    except Exception as e:
+        return Response({
+            'error': str(e)
+        }, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def assign_user_role(request):
+    """
+    Assign a role to the authenticated user.
+    Required parameters:
+    - role_type: 'inspector' or 'supervisor'
+    - name: Full name of the user
+    - phone: Phone number
+    - department: (only for supervisor role)
+    """
+    try:
+        user = request.user
+        role_type = request.data.get('role_type')
+        name = request.data.get('name')
+        phone = request.data.get('phone')
+        
+        if not role_type or not name:
+            return Response({
+                'error': 'Required fields missing: role_type and name are required'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Check if user already has a role
+        existing_inspector = CLIInspector.objects.filter(email=user.email).first()
+        existing_supervisor = Supervisor.objects.filter(email=user.email).first()
+        
+        if existing_inspector or existing_supervisor:
+            return Response({
+                'error': 'User already has an assigned role',
+                'current_role': 'inspector' if existing_inspector else 'supervisor'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Assign the requested role
+        if role_type.lower() == 'inspector':
+            inspector = CLIInspector.objects.create(
+                name=name,
+                email=user.email,
+                phone=phone
+            )
+            return Response({
+                'message': 'User assigned as CLI Inspector successfully',
+                'role': 'inspector',
+                'details': CLIInspectorSerializer(inspector).data
+            }, status=status.HTTP_201_CREATED)
+            
+        elif role_type.lower() == 'supervisor':
+            department = request.data.get('department')
+            if not department:
+                return Response({
+                    'error': 'Department is required for supervisor role'
+                }, status=status.HTTP_400_BAD_REQUEST)
+                
+            supervisor = Supervisor.objects.create(
+                name=name,
+                email=user.email,
+                phone=phone,
+                department=department
+            )
+            return Response({
+                'message': 'User assigned as Supervisor successfully',
+                'role': 'supervisor',
+                'details': SupervisorSerializer(supervisor).data
+            }, status=status.HTTP_201_CREATED)
+            
+        else:
+            return Response({
+                'error': 'Invalid role type. Must be "inspector" or "supervisor"'
+            }, status=status.HTTP_400_BAD_REQUEST)
+            
+    except Exception as e:
+        return Response({
+            'error': str(e)
+        }, status=status.HTTP_400_BAD_REQUEST)

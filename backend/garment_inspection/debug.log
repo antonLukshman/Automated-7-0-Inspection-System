@@ -983,3 +983,30 @@ INFO 2025-03-23 17:09:51,735 basehttp 43584 47072 "GET /admin/jsi18n/ HTTP/1.1" 
 INFO 2025-03-23 17:14:05,707 basehttp 43584 47072 "GET /admin/token_blacklist/blacklistedtoken/ HTTP/1.1" 200 10851
 INFO 2025-03-23 17:14:05,735 basehttp 43584 47072 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2025-03-24 08:58:59,310 autoreload 63128 77820 Watching for file changes with StatReloader
+INFO 2025-04-02 14:13:54,897 autoreload 11676 21812 Watching for file changes with StatReloader
+INFO 2025-04-02 14:15:38,139 autoreload 11676 21812 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\views.py changed, reloading.
+INFO 2025-04-02 14:15:38,772 autoreload 20784 21036 Watching for file changes with StatReloader
+INFO 2025-04-02 14:16:17,875 autoreload 20784 21036 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\permissions.py changed, reloading.
+INFO 2025-04-02 14:16:18,465 autoreload 12368 2680 Watching for file changes with StatReloader
+INFO 2025-04-02 14:16:53,232 autoreload 7828 11848 Watching for file changes with StatReloader
+INFO 2025-04-02 14:17:37,531 autoreload 2500 4736 Watching for file changes with StatReloader
+INFO 2025-04-02 14:17:43,022 basehttp 12368 21676 "GET / HTTP/1.1" 200 40
+WARNING 2025-04-02 14:17:43,416 log 12368 21676 Not Found: /favicon.ico
+WARNING 2025-04-02 14:17:43,417 basehttp 12368 21676 "GET /favicon.ico HTTP/1.1" 404 9189
+INFO 2025-04-02 14:17:44,284 basehttp 12368 21676 "GET / HTTP/1.1" 200 40
+INFO 2025-04-02 14:17:47,634 basehttp 12368 12276 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-04-02 14:17:47,755 basehttp 12368 12276 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2025-04-02 14:17:47,880 basehttp 12368 12276 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-04-02 14:17:50,540 basehttp 12368 12276 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4321
+INFO 2025-04-02 14:17:56,657 basehttp 12368 12276 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4322
+INFO 2025-04-02 14:18:36,110 basehttp 12368 12276 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-04-02 14:18:36,145 basehttp 12368 12276 "GET /admin/ HTTP/1.1" 200 12179
+INFO 2025-04-02 14:18:42,589 basehttp 12368 12276 "GET /admin/auth/user/ HTTP/1.1" 200 15655
+INFO 2025-04-02 14:18:42,636 basehttp 12368 12276 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-02 14:18:42,774 basehttp 12368 12276 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-04-02 14:20:17,030 autoreload 7828 11848 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\permissions.py changed, reloading.
+INFO 2025-04-02 14:20:17,086 autoreload 12368 2680 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\permissions.py changed, reloading.
+INFO 2025-04-02 14:20:17,092 autoreload 2500 4736 C:\Programming\Cloned Shii\Final\Automated-7-0-Inspection-System\backend\garment_inspection\inspection\permissions.py changed, reloading.
+INFO 2025-04-02 14:20:17,709 autoreload 21896 22048 Watching for file changes with StatReloader
+INFO 2025-04-02 14:20:17,740 autoreload 9720 15616 Watching for file changes with StatReloader
+INFO 2025-04-02 14:20:17,758 autoreload 15684 8060 Watching for file changes with StatReloader

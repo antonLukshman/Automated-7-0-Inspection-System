@@ -1,8 +1,13 @@
+import logging
+import os
+import tempfile
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, generics
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
+
+from .fabric_preprocessing import enhance_for_defect_detection
 from .serializers import (
     UserSerializer, 
     InspectionSerializer, 
@@ -1194,4 +1199,61 @@ def supervisor_team_overview(request):
     except Exception as e:
         return Response({
             'error': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+logger = logging.getLogger('inspection')
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@parser_classes([MultiPartParser, FormParser])
+def enhance_fabric_image(request):
+    """
+    Enhance a fabric image for better defect detection.
+    """
+    try:
+        # Check if image is provided
+        if 'image' not in request.FILES:
+            return Response({
+                "error": "No image provided. Please upload an image to enhance."
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        image_file = request.FILES['image']
+        
+        # Save the uploaded image to a temporary file
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.jpg') as tmp_file:
+            input_path = tmp_file.name
+            for chunk in image_file.chunks():
+                tmp_file.write(chunk)
+        
+        # Set enhancement method from request or default to "all"
+        method = request.data.get('method', 'all')
+        
+        # Apply enhancement
+        enhanced_path = enhance_for_defect_detection(input_path, method=method)
+        
+        if not enhanced_path:
+            return Response({
+                "error": "Failed to enhance the image."
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+        # Return the image as a response (or save to storage)
+        with open(enhanced_path, 'rb') as f:
+            enhanced_image = f.read()
+            
+        # Clean up temporary files
+        try:
+            os.unlink(input_path)
+            os.unlink(enhanced_path)
+        except Exception:
+            pass
+            
+        return HttpResponse(
+            enhanced_image, 
+            content_type='image/jpeg'
+        )
+        
+    except Exception as e:
+        return Response({
+            "error": f"An error occurred: {str(e)}"
         }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

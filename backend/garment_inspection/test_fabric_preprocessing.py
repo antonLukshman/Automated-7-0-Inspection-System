@@ -56,5 +56,5 @@ def enhance_fabric_image(image_path, output_path=None):
     return output_path
 
 if __name__ == "__main__":
-    test_image = "C:/Programming/Cloned Shii/Final/Automated-7-0-Inspection-System/backend/test3.jpg"
+    test_image = "C:/Programming/Cloned Shii/Final/Automated-7-0-Inspection-System/backend/Hole.png0"
     enhanced_image = enhance_fabric_image(test_image)

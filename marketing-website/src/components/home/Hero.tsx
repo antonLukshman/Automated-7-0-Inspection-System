@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export const Hero = () => {
   return (
@@ -33,10 +34,12 @@ export const Hero = () => {
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 flex items-center justify-center">
-        <img
+        <Image
           className="h-58 w-48 object-cover" // Adjusted height and width to make the image smaller
           src="/Mockup.jpg"
           alt="Quality inspection in action"
+          width={192}
+          height={232}
         />
       </div>
     </div>

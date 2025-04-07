@@ -4,7 +4,7 @@ export const Testimonials = () => {
   const testimonials = [
     {
       quote:
-        "This system has transformed our quality control process. We've seen significant improvements in efficiency and accuracy.",
+        "This system has transformed our quality control process. We&apos;ve seen significant improvements in efficiency and accuracy.",
       author: "Sarah Chen",
       role: "Quality Manager",
       company: "Fashion Dynamics",
@@ -33,7 +33,9 @@ export const Testimonials = () => {
         <div className="mt-16 grid gap-8 md:grid-cols-2">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-8">
-              <div className="text-gray-600 italic">"{testimonial.quote}"</div>
+              <div className="text-gray-600 italic">
+                &quot;{testimonial.quote}&quot;
+              </div>
               <div className="mt-4">
                 <p className="text-gray-900 font-medium">
                   {testimonial.author}

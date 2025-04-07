@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { FadeIn } from "@/animations";
-import "../styles/globals.css";
 
 const GetStarted = () => {
   const [step, setStep] = useState(1);

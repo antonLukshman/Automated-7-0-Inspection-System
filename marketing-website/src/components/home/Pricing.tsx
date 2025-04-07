@@ -1,10 +1,5 @@
 import React from "react";
 import { CheckCircle } from "lucide-react";
-import { Plan } from "@/types";
-
-interface PricingProps {
-  plans: Plan[];
-}
 
 export const PricingSection = () => {
   const plans = [

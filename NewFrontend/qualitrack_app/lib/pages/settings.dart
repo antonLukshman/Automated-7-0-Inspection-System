@@ -76,7 +76,7 @@ class _SettingsPageState extends State<SettingsPage> {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => ProfilePage()),
+            MaterialPageRoute(builder: (context) => EditProfilePage()),
           );
         },
       ),
@@ -225,7 +225,7 @@ class _SettingsPageState extends State<SettingsPage> {
 }
 
 // Profile Settings Page
-class ProfilePage extends StatelessWidget {
+class EditProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

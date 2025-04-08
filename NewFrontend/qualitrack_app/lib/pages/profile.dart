@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:qualitrack_app/pages/select_user.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -19,13 +19,13 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
           ),
-          
+
           // Curved header
           CustomPaint(
             size: Size(MediaQuery.of(context).size.width, 300),
             painter: CurvePainter(),
           ),
-          
+
           // Content
           SingleChildScrollView(
             child: Column(
@@ -65,7 +65,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                
+
                 const SizedBox(height: 20),
                 const Text(
                   'John Doe',
@@ -77,12 +77,9 @@ class ProfilePage extends StatelessWidget {
                 ),
                 const Text(
                   'john.doe@example.com',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.white70,
-                  ),
+                  style: TextStyle(fontSize: 16, color: Colors.white70),
                 ),
-                
+
                 const SizedBox(height: 30),
                 // Info cards with hover effect
                 Padding(
@@ -107,7 +104,7 @@ class ProfilePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                
+
                 const SizedBox(height: 30),
                 // Animated logout button
                 Padding(
@@ -117,6 +114,15 @@ class ProfilePage extends StatelessWidget {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Logging out...')),
                       );
+                      // After the SnackBar disappears, navigate to the login page
+                      Future.delayed(const Duration(seconds: 1), () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SelectUserPage(),
+                          ),
+                        );
+                      });
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -158,26 +164,28 @@ class ProfilePage extends StatelessWidget {
 class CurvePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    var paint = Paint()
-      ..color = Colors.white12
-      ..style = PaintingStyle.fill;
+    var paint =
+        Paint()
+          ..color = Colors.white12
+          ..style = PaintingStyle.fill;
 
-    var path = Path()
-      ..moveTo(0, size.height * 0.7)
-      ..quadraticBezierTo(
-        size.width * 0.25,
-        size.height * 0.9,
-        size.width * 0.5,
-        size.height * 0.7,
-      )
-      ..quadraticBezierTo(
-        size.width * 0.75,
-        size.height * 0.5,
-        size.width,
-        size.height * 0.7,
-      )
-      ..lineTo(size.width, 0)
-      ..lineTo(0, 0);
+    var path =
+        Path()
+          ..moveTo(0, size.height * 0.7)
+          ..quadraticBezierTo(
+            size.width * 0.25,
+            size.height * 0.9,
+            size.width * 0.5,
+            size.height * 0.7,
+          )
+          ..quadraticBezierTo(
+            size.width * 0.75,
+            size.height * 0.5,
+            size.width,
+            size.height * 0.7,
+          )
+          ..lineTo(size.width, 0)
+          ..lineTo(0, 0);
 
     canvas.drawPath(path, paint);
   }
@@ -208,11 +216,7 @@ class ProfileInfoCard extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 5,
-            offset: Offset(0, 2),
-          ),
+          BoxShadow(color: Colors.black12, blurRadius: 5, offset: Offset(0, 2)),
         ],
       ),
       child: Row(
@@ -236,10 +240,7 @@ class ProfileInfoCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text(
-                value,
-                style: const TextStyle(fontSize: 16),
-              ),
+              Text(value, style: const TextStyle(fontSize: 16)),
             ],
           ),
         ],

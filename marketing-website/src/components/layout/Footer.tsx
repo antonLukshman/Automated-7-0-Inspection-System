@@ -1,5 +1,5 @@
-import { Eye, Facebook, Instagram, Linkedin } from "lucide-react";
-import { Twitter } from "lucide-react";
+import Image from "next/image";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import React from "react";
 import { FooterLink } from "./FooterLink";
 import { SocialIcon } from "./Footer/SocialIcon";
@@ -11,7 +11,13 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center">
-              <Eye className="h-8 w-8 text-blue-500" />
+              <Image
+                src="/Logo.png"
+                alt="QualiTrack"
+                className="h-8 w-auto"
+                width={32}
+                height={32}
+              />
               <span className="ml-2 text-xl font-bold text-white">
                 QualiTrack
               </span>
@@ -25,7 +31,10 @@ export const Footer = () => {
               <SocialIcon icon={<Facebook />} href="#" />
               <SocialIcon icon={<Twitter />} href="#" />
               <SocialIcon icon={<Linkedin />} href="#" />
-              <SocialIcon icon={<Instagram />} href="#" />
+              <SocialIcon
+                icon={<Instagram />}
+                href="https://www.instagram.com/qualitrack/#"
+              />
             </div>
           </div>
 

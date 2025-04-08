@@ -33,13 +33,13 @@ export const ContactForm = () => {
             </h2>
             <p className="mt-4 text-lg text-gray-500">
               Have questions about our AI-powered quality inspection system?
-              We'd love to hear from you.
+              We&apos;d love to hear from you.
             </p>
 
             <div className="mt-8 space-y-6">
               <div className="flex items-center">
                 <Phone className="h-6 w-6 text-blue-600" />
-                <span className="ml-4 text-gray-500">+1 (555) 123-4567</span>
+                <span className="ml-4 text-gray-500">+94768133389</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-6 w-6 text-blue-600" />
@@ -50,7 +50,7 @@ export const ContactForm = () => {
               <div className="flex items-center">
                 <MapPin className="h-6 w-6 text-blue-600" />
                 <span className="ml-4 text-gray-500">
-                  123 Quality Street, Tech City, TC 12345
+                  124 Quality Street, Colombo, Sri Lanka{" "}
                 </span>
               </div>
             </div>

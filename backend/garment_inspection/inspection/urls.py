@@ -1,11 +1,23 @@
+# inspection/urls.py
 from django.urls import path
 from django.views.decorators.csrf import csrf_exempt
-from . import views
+from . import views  # Make sure this import is present
+from .views import (
+    get_user_role,
+    assign_user_role,
+    # Remove or comment out functions that don't exist yet
+    # inspector_defect_summary,
+    # supervisor_team_overview,
+)
 
 urlpatterns = [
     # Auth URLs
     path('register/', views.UserRegistration.as_view(), name='user-register'),
     path('login/', views.UserLogin.as_view(), name='user-login'),
+    
+    # User role endpoints
+    path('api/user/role/', get_user_role, name='get_user_role'),
+    path('api/user/assign-role/', assign_user_role, name='assign_user_role'),
     
     # Inspection URLs
     path('inspections/', views.InspectionListCreateView.as_view(), name='inspections'),
@@ -42,5 +54,10 @@ urlpatterns = [
     path('notifications/<int:notification_id>/', views.get_notification_detail, name='notification-detail'),
     path('notifications/<int:notification_id>/read/', views.mark_notification_read, name='mark-notification-read'),
     path('notifications/read-all/', views.mark_all_notifications_read, name='mark-all-notifications-read'),
+    
+    # Comment out URLs for functions that don't exist yet
+    # path('api/inspector/defect-summary/', inspector_defect_summary, name='inspector_defect_summary'),
+    # path('api/supervisor/team-overview/', supervisor_team_overview, name='supervisor_team_overview'),
+    # path('enhance-garment-image/', views.enhance_garment_image, name='enhance_garment_image'),
+    # path('enhance-and-detect-defects/', views.enhance_and_detect_defects, name='enhance_and_detect_defects'),
 ]
-

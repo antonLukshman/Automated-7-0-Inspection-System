@@ -1,8 +1,13 @@
+import logging
+import os
+import tempfile
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, generics
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
+
+from .fabric_preprocessing import enhance_for_defect_detection
 from .serializers import (
     UserSerializer, 
     InspectionSerializer, 
@@ -26,6 +31,8 @@ from django.db import models
 import requests
 from django.conf import settings
 from django.utils import timezone
+
+from .permissions import IsInspector, IsSupervisor, IsInspectorOrSupervisor  # 
 import datetime
 
 # User Registration View
@@ -889,3 +896,364 @@ def mark_all_notifications_read(request):
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
     
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_user_role(request):
+    """
+    Get the role of the authenticated user.
+    Returns the role type and user details.
+    """
+    try:
+        user = request.user
+        user_data = {
+            'user_id': user.id,
+            'username': user.username,
+            'email': user.email
+        }
+        
+        # Check if user is a CLI Inspector
+        cli_inspectors = CLIInspector.objects.filter(email=user.email)
+        if cli_inspectors.exists():
+            inspector = cli_inspectors.first()
+            return Response({
+                'role': 'inspector',
+                'user': user_data,
+                'details': CLIInspectorSerializer(inspector).data
+            })
+            
+        # Check if user is a Supervisor
+        supervisors = Supervisor.objects.filter(email=user.email)
+        if supervisors.exists():
+            supervisor = supervisors.first()
+            return Response({
+                'role': 'supervisor',
+                'user': user_data,
+                'details': SupervisorSerializer(supervisor).data
+            })
+        
+        # User exists but doesn't have a specific role
+        return Response({
+            'role': 'undefined',
+            'user': user_data,
+            'message': 'User exists but is not assigned to a role.'
+        })
+        
+    except Exception as e:
+        return Response({
+            'error': str(e)
+        }, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def assign_user_role(request):
+    """
+    Assign a role to the authenticated user.
+    Required parameters:
+    - role_type: 'inspector' or 'supervisor'
+    - name: Full name of the user
+    - phone: Phone number
+    - department: (only for supervisor role)
+    """
+    try:
+        user = request.user
+        role_type = request.data.get('role_type')
+        name = request.data.get('name')
+        phone = request.data.get('phone')
+        
+        if not role_type or not name:
+            return Response({
+                'error': 'Required fields missing: role_type and name are required'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Check if user already has a role
+        existing_inspector = CLIInspector.objects.filter(email=user.email).first()
+        existing_supervisor = Supervisor.objects.filter(email=user.email).first()
+        
+        if existing_inspector or existing_supervisor:
+            return Response({
+                'error': 'User already has an assigned role',
+                'current_role': 'inspector' if existing_inspector else 'supervisor'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Assign the requested role
+        if role_type.lower() == 'inspector':
+            inspector = CLIInspector.objects.create(
+                name=name,
+                email=user.email,
+                phone=phone
+            )
+            return Response({
+                'message': 'User assigned as CLI Inspector successfully',
+                'role': 'inspector',
+                'details': CLIInspectorSerializer(inspector).data
+            }, status=status.HTTP_201_CREATED)
+            
+        elif role_type.lower() == 'supervisor':
+            department = request.data.get('department')
+            if not department:
+                return Response({
+                    'error': 'Department is required for supervisor role'
+                }, status=status.HTTP_400_BAD_REQUEST)
+                
+            supervisor = Supervisor.objects.create(
+                name=name,
+                email=user.email,
+                phone=phone,
+                department=department
+            )
+            return Response({
+                'message': 'User assigned as Supervisor successfully',
+                'role': 'supervisor',
+                'details': SupervisorSerializer(supervisor).data
+            }, status=status.HTTP_201_CREATED)
+            
+        else:
+            return Response({
+                'error': 'Invalid role type. Must be "inspector" or "supervisor"'
+            }, status=status.HTTP_400_BAD_REQUEST)
+            
+    except Exception as e:
+        return Response({
+            'error': str(e)
+        }, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+@permission_classes([IsInspector])
+def inspector_defect_summary(request):
+    """
+    Get a summary of fabric defects found by the authenticated CLI Inspector.
+    Only accessible to users with the CLI Inspector role.
+    """
+    try:
+        # Get the CLI Inspector profile for the authenticated user
+        inspector = CLIInspector.objects.get(email=request.user.email)
+        
+        # Get inspections performed by this inspector
+        inspections = inspector.inspection_set.all()
+        
+        # Calculate defect statistics
+        total_inspections = inspections.count()
+        defects_found = 0
+        defect_type_counts = {}
+        
+        for inspection in inspections:
+            if hasattr(inspection, 'fabric_defect') and inspection.fabric_defect:
+                defects_found += 1
+                
+                # Count by defect type
+                defect_type = inspection.fabric_defect.defect_type
+                if defect_type in defect_type_counts:
+                    defect_type_counts[defect_type] += 1
+                else:
+                    defect_type_counts[defect_type] = 1
+        
+        # Get recent defects (last 10)
+        recent_defect_ids = [
+            insp.fabric_defect.id for insp in inspections 
+            if hasattr(insp, 'fabric_defect') and insp.fabric_defect
+        ][:10]
+        recent_defects = FabricDefect.objects.filter(id__in=recent_defect_ids)
+        
+        # Calculate defect ratio
+        defect_ratio = 0
+        if total_inspections > 0:
+            defect_ratio = (defects_found / total_inspections) * 100
+        
+        return Response({
+            'inspector_name': inspector.name,
+            'total_inspections': total_inspections,
+            'defects_found': defects_found,
+            'defect_ratio': round(defect_ratio, 2),
+            'defect_types': [
+                {'type': defect_type, 'count': count}
+                for defect_type, count in defect_type_counts.items()
+            ],
+            'recent_defects': [
+                {
+                    'id': defect.id,
+                    'type': defect.defect_type,
+                    'severity': defect.severity,
+                    'date': defect.detected_at.strftime('%Y-%m-%d %H:%M')
+                }
+                for defect in recent_defects
+            ]
+        })
+        
+    except CLIInspector.DoesNotExist:
+        return Response({
+            'error': 'You are not registered as a CLI Inspector'
+        }, status=status.HTTP_403_FORBIDDEN)
+        
+    except Exception as e:
+        return Response({
+            'error': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+@api_view(['GET'])
+@permission_classes([IsSupervisor])
+def supervisor_team_overview(request):
+    """
+    Get a overview of the supervisor's team performance.
+    Only accessible to users with the Supervisor role.
+    """
+    try:
+        # Get the Supervisor profile for the authenticated user
+        supervisor = Supervisor.objects.get(email=request.user.email)
+        
+        # Get date range (default to last 7 days)
+        end_date = timezone.now().date()
+        days = int(request.query_params.get('days', '7'))
+        start_date = end_date - datetime.timedelta(days=days)
+        
+        # Get inspections supervised by this supervisor in date range
+        inspections = Inspection.objects.filter(
+            supervisor=supervisor,
+            inspection_date__date__gte=start_date,
+            inspection_date__date__lte=end_date
+        )
+        
+        # Get flags associated with this supervisor in date range
+        flags = Flag.objects.filter(
+            supervisor=supervisor,
+            date_of_inspection__gte=start_date,
+            date_of_inspection__lte=end_date
+        )
+        
+        # Get team members (inspectors) who worked with this supervisor
+        inspectors = CLIInspector.objects.filter(
+            inspection__supervisor=supervisor,
+            inspection__inspection_date__date__gte=start_date,
+            inspection__inspection_date__date__lte=end_date
+        ).distinct()
+        
+        # Calculate team statistics
+        inspector_stats = []
+        for inspector in inspectors:
+            inspector_inspections = inspections.filter(cli_inspector=inspector)
+            inspector_flags = flags.filter(inspector=inspector)
+            
+            # Calculate inspection efficiency
+            total_insp = inspector_inspections.count()
+            resolved_insp = inspector_inspections.filter(status='Resolved').count()
+            efficiency = 0
+            if total_insp > 0:
+                efficiency = (resolved_insp / total_insp) * 100
+            
+            inspector_stats.append({
+                'inspector_id': inspector.id,
+                'inspector_name': inspector.name,
+                'total_inspections': total_insp,
+                'resolved_inspections': resolved_insp,
+                'efficiency': round(efficiency, 2),
+                'red_flags': inspector_flags.filter(flag_type='RED').count(),
+                'green_flags': inspector_flags.filter(flag_type='GREEN').count(),
+            })
+        
+        # Calculate overall statistics
+        total_inspections = inspections.count()
+        pending_inspections = inspections.filter(status='Pending').count()
+        reviewed_inspections = inspections.filter(status='Reviewed').count()
+        resolved_inspections = inspections.filter(status='Resolved').count()
+        
+        # Get flags by day (for trend analysis)
+        flags_by_day = {}
+        for i in range(days):
+            day = start_date + datetime.timedelta(days=i)
+            day_flags = flags.filter(date_of_inspection=day)
+            flags_by_day[day.isoformat()] = {
+                'total': day_flags.count(),
+                'red': day_flags.filter(flag_type='RED').count(),
+                'green': day_flags.filter(flag_type='GREEN').count()
+            }
+        
+        return Response({
+            'supervisor': {
+                'id': supervisor.id,
+                'name': supervisor.name,
+                'department': supervisor.department
+            },
+            'date_range': {
+                'start_date': start_date.isoformat(),
+                'end_date': end_date.isoformat(),
+                'days': days
+            },
+            'overall_statistics': {
+                'total_inspections': total_inspections,
+                'pending_inspections': pending_inspections,
+                'reviewed_inspections': reviewed_inspections,
+                'resolved_inspections': resolved_inspections,
+                'completion_rate': round(resolved_inspections / total_inspections * 100, 2) if total_inspections > 0 else 0,
+                'total_flags': flags.count(),
+                'red_flags': flags.filter(flag_type='RED').count(),
+                'green_flags': flags.filter(flag_type='GREEN').count()
+            },
+            'team_performance': sorted(inspector_stats, key=lambda x: x['total_inspections'], reverse=True),
+            'flags_trend': flags_by_day
+        })
+        
+    except Supervisor.DoesNotExist:
+        return Response({
+            'error': 'You are not registered as a Supervisor'
+        }, status=status.HTTP_403_FORBIDDEN)
+        
+    except Exception as e:
+        return Response({
+            'error': str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+logger = logging.getLogger('inspection')
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+@parser_classes([MultiPartParser, FormParser])
+def enhance_fabric_image(request):
+    """
+    Enhance a fabric image for better defect detection.
+    """
+    try:
+        # Check if image is provided
+        if 'image' not in request.FILES:
+            return Response({
+                "error": "No image provided. Please upload an image to enhance."
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        image_file = request.FILES['image']
+        
+        # Save the uploaded image to a temporary file
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.jpg') as tmp_file:
+            input_path = tmp_file.name
+            for chunk in image_file.chunks():
+                tmp_file.write(chunk)
+        
+        # Set enhancement method from request or default to "all"
+        method = request.data.get('method', 'all')
+        
+        # Apply enhancement
+        enhanced_path = enhance_for_defect_detection(input_path, method=method)
+        
+        if not enhanced_path:
+            return Response({
+                "error": "Failed to enhance the image."
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+        # Return the image as a response (or save to storage)
+        with open(enhanced_path, 'rb') as f:
+            enhanced_image = f.read()
+            
+        # Clean up temporary files
+        try:
+            os.unlink(input_path)
+            os.unlink(enhanced_path)
+        except Exception:
+            pass
+            
+        return HttpResponse(
+            enhanced_image, 
+            content_type='image/jpeg'
+        )
+        
+    except Exception as e:
+        return Response({
+            "error": f"An error occurred: {str(e)}"
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
